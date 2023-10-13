@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		16EB1EBE2AD94C8D00137223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EBD2AD94C8D00137223 /* AppDelegate.swift */; };
 		16EB1EC02AD94C8D00137223 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EBF2AD94C8D00137223 /* SceneDelegate.swift */; };
-		16EB1EC22AD94C8D00137223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EC12AD94C8D00137223 /* ViewController.swift */; };
-		16EB1EC52AD94C8D00137223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EC32AD94C8D00137223 /* Main.storyboard */; };
+		16EB1EC52AD94C8D00137223 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EC32AD94C8D00137223 /* Home.storyboard */; };
 		16EB1EC72AD94C8E00137223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EC62AD94C8E00137223 /* Assets.xcassets */; };
 		16EB1ECA2AD94C8E00137223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EC82AD94C8E00137223 /* LaunchScreen.storyboard */; };
 		16EB1ED52AD94C8E00137223 /* Cinemo_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1ED42AD94C8E00137223 /* Cinemo_AppTests.swift */; };
 		16EB1EDF2AD94C8E00137223 /* Cinemo_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EDE2AD94C8E00137223 /* Cinemo_AppUITests.swift */; };
 		16EB1EE12AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EE02AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift */; };
+		16EB1EF22AD94EB300137223 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF12AD94EB300137223 /* HomeViewController.swift */; };
+		16EB1EF42AD94ED500137223 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF32AD94ED500137223 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +40,7 @@
 		16EB1EBA2AD94C8D00137223 /* Cinemo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cinemo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EB1EBD2AD94C8D00137223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16EB1EBF2AD94C8D00137223 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		16EB1EC12AD94C8D00137223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		16EB1EC42AD94C8D00137223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		16EB1EC42AD94C8D00137223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		16EB1EC62AD94C8E00137223 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16EB1EC92AD94C8E00137223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16EB1ECB2AD94C8E00137223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		16EB1EDA2AD94C8E00137223 /* Cinemo AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cinemo AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EB1EDE2AD94C8E00137223 /* Cinemo_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinemo_AppUITests.swift; sourceTree = "<group>"; };
 		16EB1EE02AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinemo_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		16EB1EF12AD94EB300137223 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		16EB1EF32AD94ED500137223 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +101,9 @@
 		16EB1EBC2AD94C8D00137223 /* Cinemo App */ = {
 			isa = PBXGroup;
 			children = (
+				16EB1EED2AD94E4C00137223 /* Scene */,
 				16EB1EBD2AD94C8D00137223 /* AppDelegate.swift */,
 				16EB1EBF2AD94C8D00137223 /* SceneDelegate.swift */,
-				16EB1EC12AD94C8D00137223 /* ViewController.swift */,
-				16EB1EC32AD94C8D00137223 /* Main.storyboard */,
 				16EB1EC62AD94C8E00137223 /* Assets.xcassets */,
 				16EB1EC82AD94C8E00137223 /* LaunchScreen.storyboard */,
 				16EB1ECB2AD94C8E00137223 /* Info.plist */,
@@ -125,6 +126,40 @@
 				16EB1EE02AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift */,
 			);
 			path = "Cinemo AppUITests";
+			sourceTree = "<group>";
+		};
+		16EB1EED2AD94E4C00137223 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				16EB1EF02AD94E7C00137223 /* Favourite */,
+				16EB1EEF2AD94E7600137223 /* Detail */,
+				16EB1EEE2AD94E7200137223 /* Home */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		16EB1EEE2AD94E7200137223 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				16EB1EC32AD94C8D00137223 /* Home.storyboard */,
+				16EB1EF12AD94EB300137223 /* HomeViewController.swift */,
+				16EB1EF32AD94ED500137223 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		16EB1EEF2AD94E7600137223 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		16EB1EF02AD94E7C00137223 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favourite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +268,7 @@
 			files = (
 				16EB1ECA2AD94C8E00137223 /* LaunchScreen.storyboard in Resources */,
 				16EB1EC72AD94C8E00137223 /* Assets.xcassets in Resources */,
-				16EB1EC52AD94C8D00137223 /* Main.storyboard in Resources */,
+				16EB1EC52AD94C8D00137223 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16EB1EC22AD94C8D00137223 /* ViewController.swift in Sources */,
 				16EB1EBE2AD94C8D00137223 /* AppDelegate.swift in Sources */,
 				16EB1EC02AD94C8D00137223 /* SceneDelegate.swift in Sources */,
+				16EB1EF22AD94EB300137223 /* HomeViewController.swift in Sources */,
+				16EB1EF42AD94ED500137223 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,12 +333,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		16EB1EC32AD94C8D00137223 /* Main.storyboard */ = {
+		16EB1EC32AD94C8D00137223 /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				16EB1EC42AD94C8D00137223 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		16EB1EC82AD94C8E00137223 /* LaunchScreen.storyboard */ = {
