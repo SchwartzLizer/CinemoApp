@@ -17,6 +17,23 @@
 		16EB1EE12AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EE02AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift */; };
 		16EB1EF22AD94EB300137223 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF12AD94EB300137223 /* HomeViewController.swift */; };
 		16EB1EF42AD94ED500137223 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF32AD94ED500137223 /* HomeViewModel.swift */; };
+		16EB1EF72AD94F7300137223 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF62AD94F7300137223 /* Protocol.swift */; };
+		16EB1EFF2AD94FF100137223 /* RouterEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EFA2AD94FF100137223 /* RouterEnumeration.swift */; };
+		16EB1F002AD94FF100137223 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EFB2AD94FF100137223 /* Configuration.plist */; };
+		16EB1F012AD94FF100137223 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EFC2AD94FF100137223 /* Network.swift */; };
+		16EB1F022AD94FF100137223 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EFD2AD94FF100137223 /* Router.swift */; };
+		16EB1F032AD94FF100137223 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EFE2AD94FF100137223 /* Configuration.swift */; };
+		16EB1F082AD9535000137223 /* MovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F072AD9535000137223 /* MovieListModel.swift */; };
+		16EB1F0A2AD9547500137223 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F092AD9547500137223 /* Logger.swift */; };
+		16EB1F0C2AD95E4800137223 /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F0B2AD95E4800137223 /* NetworkTest.swift */; };
+		16EB1F132AD95E9A00137223 /* RouterEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EFA2AD94FF100137223 /* RouterEnumeration.swift */; };
+		16EB1F142AD95E9A00137223 /* MovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F072AD9535000137223 /* MovieListModel.swift */; };
+		16EB1F152AD95E9A00137223 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EFD2AD94FF100137223 /* Router.swift */; };
+		16EB1F162AD95E9A00137223 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EFE2AD94FF100137223 /* Configuration.swift */; };
+		16EB1F172AD95E9A00137223 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EFC2AD94FF100137223 /* Network.swift */; };
+		16EB1F182AD95E9A00137223 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EFB2AD94FF100137223 /* Configuration.plist */; };
+		16EB1F192AD9600B00137223 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF62AD94F7300137223 /* Protocol.swift */; };
+		16EB1F1A2AD9600B00137223 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F092AD9547500137223 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +68,15 @@
 		16EB1EE02AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinemo_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		16EB1EF12AD94EB300137223 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		16EB1EF32AD94ED500137223 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		16EB1EF62AD94F7300137223 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		16EB1EFA2AD94FF100137223 /* RouterEnumeration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterEnumeration.swift; sourceTree = "<group>"; };
+		16EB1EFB2AD94FF100137223 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		16EB1EFC2AD94FF100137223 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		16EB1EFD2AD94FF100137223 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		16EB1EFE2AD94FF100137223 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		16EB1F072AD9535000137223 /* MovieListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListModel.swift; sourceTree = "<group>"; };
+		16EB1F092AD9547500137223 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		16EB1F0B2AD95E4800137223 /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +127,8 @@
 		16EB1EBC2AD94C8D00137223 /* Cinemo App */ = {
 			isa = PBXGroup;
 			children = (
+				16EB1EF92AD94FF100137223 /* Router */,
+				16EB1EF52AD94F6400137223 /* Support Files */,
 				16EB1EED2AD94E4C00137223 /* Scene */,
 				16EB1EBD2AD94C8D00137223 /* AppDelegate.swift */,
 				16EB1EBF2AD94C8D00137223 /* SceneDelegate.swift */,
@@ -115,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				16EB1ED42AD94C8E00137223 /* Cinemo_AppTests.swift */,
+				16EB1F0B2AD95E4800137223 /* NetworkTest.swift */,
 			);
 			path = "Cinemo AppTests";
 			sourceTree = "<group>";
@@ -160,6 +189,36 @@
 			children = (
 			);
 			path = Favourite;
+			sourceTree = "<group>";
+		};
+		16EB1EF52AD94F6400137223 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				16EB1EF62AD94F7300137223 /* Protocol.swift */,
+				16EB1F092AD9547500137223 /* Logger.swift */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		16EB1EF92AD94FF100137223 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				16EB1F042AD9518800137223 /* Model */,
+				16EB1EFA2AD94FF100137223 /* RouterEnumeration.swift */,
+				16EB1EFB2AD94FF100137223 /* Configuration.plist */,
+				16EB1EFC2AD94FF100137223 /* Network.swift */,
+				16EB1EFD2AD94FF100137223 /* Router.swift */,
+				16EB1EFE2AD94FF100137223 /* Configuration.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		16EB1F042AD9518800137223 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16EB1F072AD9535000137223 /* MovieListModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16EB1ECA2AD94C8E00137223 /* LaunchScreen.storyboard in Resources */,
+				16EB1F002AD94FF100137223 /* Configuration.plist in Resources */,
 				16EB1EC72AD94C8E00137223 /* Assets.xcassets in Resources */,
 				16EB1EC52AD94C8D00137223 /* Home.storyboard in Resources */,
 			);
@@ -276,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16EB1F182AD95E9A00137223 /* Configuration.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,10 +354,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16EB1F022AD94FF100137223 /* Router.swift in Sources */,
+				16EB1F0A2AD9547500137223 /* Logger.swift in Sources */,
+				16EB1EFF2AD94FF100137223 /* RouterEnumeration.swift in Sources */,
 				16EB1EBE2AD94C8D00137223 /* AppDelegate.swift in Sources */,
+				16EB1F032AD94FF100137223 /* Configuration.swift in Sources */,
 				16EB1EC02AD94C8D00137223 /* SceneDelegate.swift in Sources */,
 				16EB1EF22AD94EB300137223 /* HomeViewController.swift in Sources */,
+				16EB1F082AD9535000137223 /* MovieListModel.swift in Sources */,
 				16EB1EF42AD94ED500137223 /* HomeViewModel.swift in Sources */,
+				16EB1F012AD94FF100137223 /* Network.swift in Sources */,
+				16EB1EF72AD94F7300137223 /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +372,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16EB1F162AD95E9A00137223 /* Configuration.swift in Sources */,
+				16EB1F142AD95E9A00137223 /* MovieListModel.swift in Sources */,
+				16EB1F132AD95E9A00137223 /* RouterEnumeration.swift in Sources */,
+				16EB1F192AD9600B00137223 /* Protocol.swift in Sources */,
+				16EB1F1A2AD9600B00137223 /* Logger.swift in Sources */,
+				16EB1F152AD95E9A00137223 /* Router.swift in Sources */,
+				16EB1F0C2AD95E4800137223 /* NetworkTest.swift in Sources */,
+				16EB1F172AD95E9A00137223 /* Network.swift in Sources */,
 				16EB1ED52AD94C8E00137223 /* Cinemo_AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,9 +559,10 @@
 				INFOPLIST_FILE = "Cinemo App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Home;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,9 +588,10 @@
 				INFOPLIST_FILE = "Cinemo App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Home;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
