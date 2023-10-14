@@ -23,48 +23,12 @@ enum Theme: Int {
 
     // MARK: Internal
 
-    var mainColor: UIColor {
-        switch self {
-        case .LightMode:
-            return UIColor().hex("ffffff")
-        case .DarkMode:
-            return UIColor().hex("000000")
-        }
-    }
-
-    // Customizing the Navigation Bar
-    var barStyle: UIBarStyle {
-        switch self {
-        case .LightMode:
-            return .default
-        case .DarkMode:
-            return .black
-        }
-    }
-
-    var navigationBackgroundImage: UIImage? {
-        return self == .LightMode ? UIImage(named: "navBackground") : nil
-    }
-
-    var tabBarBackgroundImage: UIImage? {
-        return self == .LightMode ? UIImage(named: "tabBarBackground") : nil
-    }
-
     var backgroundColor: UIColor {
         switch self {
         case .LightMode:
-            return UIColor().hex("ffffff")
+            return .white
         case .DarkMode:
-            return UIColor().hex("000000")
-        }
-    }
-
-    var secondaryColor: UIColor {
-        switch self {
-        case .LightMode:
-            return UIColor().hex("ffffff")
-        case .DarkMode:
-            return UIColor().hex("000000")
+            return .black
         }
     }
 
@@ -73,7 +37,7 @@ enum Theme: Int {
         case .LightMode:
             return .black
         case .DarkMode:
-            return .black
+            return .white
         }
     }
 
@@ -100,7 +64,7 @@ enum Theme: Int {
         case .LightMode:
             return UIColor().hex("#f8f8f8")
         case .DarkMode:
-            return UIColor().hex("#f8f8f8")
+            return UIColor().hex("#636363")
         }
     }
 
@@ -112,6 +76,52 @@ enum Theme: Int {
             return UIColor().hex("#ff3144")
         }
     }
+
+    var tableViewBackgroundColor: UIColor {
+        switch self {
+        case .LightMode:
+            return .white
+        case .DarkMode:
+            return .black
+        }
+    }
+
+    var labelHeaderTableViewColor: UIColor {
+        switch self {
+        case .LightMode:
+            return .lightGray
+        case .DarkMode:
+            return .white
+        }
+    }
+
+    var navigationBarTintColor: UIColor {
+        switch self {
+        case .LightMode:
+            return .black
+        case .DarkMode:
+            return .white
+        }
+    }
+
+    var navigationBarTitleColor: UIColor {
+        switch self {
+        case .LightMode:
+            return .black
+        case .DarkMode:
+            return .white
+        }
+    }
+
+    var navigationBarBackgroundColor: UIColor {
+        switch self {
+        case .LightMode:
+            return .white
+        case .DarkMode:
+            return .black
+        }
+    }
+
 
 }
 
@@ -151,5 +161,11 @@ enum Fonts: Int {
         }
     }
 
+    var searchFont: UIFont {
+        switch self {
+        case .main:
+            return UIFont(name: Constants.Font.regular, size: 16)!
+        }
+    }
 
 }

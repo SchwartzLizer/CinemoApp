@@ -48,11 +48,11 @@ extension HeaderTableViewCell: ApplyTheme {
   }
 
   func applyLabel() {
-      self.headerLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.subtitleTextColor)
+      self.headerLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.labelHeaderTableViewColor)
   }
 
   func applyBackground() {
-    self.contentView.backgroundColor = .white
+      self.contentView.backgroundColor = self.theme.tableViewBackgroundColor
   }
 
 }

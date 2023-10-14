@@ -101,6 +101,7 @@ class FavouriteViewController: UIViewController {
                     for: indexPath) as! MovieTableViewCell
                 cell.viewModel = MovieTableViewModel(data: data)
                 cell.selectionStyle = .none
+                cell.contentView.backgroundColor = self.theme.tableViewBackgroundColor
                 cell.delegate = self
                 return cell
 
@@ -181,7 +182,7 @@ extension FavouriteViewController: UserInterfaceSetup,UITableViewDelegate,UISear
         self.tableView.separatorStyle = .none
         self.tableView.selectionFollowsFocus = false
         self.tableView.allowsSelection = false
-        self.tableView.backgroundColor = .white
+        self.tableView.backgroundColor = self.theme.tableViewBackgroundColor
         self.refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         self.tableView.refreshControl = self.refreshControl
     }

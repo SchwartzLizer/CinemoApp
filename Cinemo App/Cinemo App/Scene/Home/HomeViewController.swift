@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
         case main
     }
 
-    private var viewModel: HomeViewModel = HomeViewModel()
+    private var viewModel = HomeViewModel()
     private let refreshControl = UIRefreshControl()
 
     private lazy var dataSource: UITableViewDiffableDataSource<TableSection, Movie>? = {
@@ -81,6 +81,7 @@ class HomeViewController: UIViewController {
                     for: indexPath) as! MovieTableViewCell
                 cell.viewModel = MovieTableViewModel(data: data)
                 cell.selectionStyle = .none
+                cell.contentView.backgroundColor = self.theme.tableViewBackgroundColor
                 cell.delegate = self
                 return cell
             }
@@ -160,7 +161,7 @@ extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBar
         self.tableView.separatorStyle = .none
         self.tableView.selectionFollowsFocus = false
         self.tableView.allowsSelection = false
-        self.tableView.backgroundColor = .white
+        self.tableView.backgroundColor = self.theme.tableViewBackgroundColor
         self.refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         self.tableView.refreshControl = self.refreshControl
     }
@@ -169,6 +170,7 @@ extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBar
         self.searchView.delegate = self
         self.searchView.placeholder = Constants.Keys.homeSearchBarPlaceHolder.localized()
         self.searchView.searchBarStyle = .minimal
+        self.searchView.searchTextField.font = self.font.searchFont
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
@@ -190,7 +192,7 @@ extension HomeViewController: Action,MovieTableViewCellDelegate {
     func didSelectFavourite() {
         HapticFeedback.successNotification()
     }
-    
+
     func didSelectViewMore(data: Movie) {
         HapticFeedback.lightImpact()
         let detailVC = DetailViewController(viewModel: DetailViewModel(data: data))
@@ -206,7 +208,7 @@ extension HomeViewController: Action,MovieTableViewCellDelegate {
 
     func searchBar(_: UISearchBar, textDidChange searchText: String) {
         HapticFeedback.lightImpact()
-        viewModel.searchText.send(searchText)
+        self.viewModel.searchText.send(searchText)
     }
 
     @objc
@@ -231,14 +233,23 @@ extension HomeViewController: ApplyTheme {
             style: .plain,
             target: self,
             action: #selector(self.didSelectFavorite))
-        favoriteButton.tintColor = theme.heartColor
+        favoriteButton.tintColor = self.theme.heartColor
         self.navigationItem.rightBarButtonItem = favoriteButton
         self.title = Constants.Keys.appName.localized()
 
         let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = self.theme.navigationBarBackgroundColor
         appearance.backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
+        appearance.shadowColor = .clear
+
+        // Apply the appearance
         navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
+        // Set the tint color
+        navigationController?.navigationBar.tintColor = self.theme.navigationBarTintColor
     }
 
 }

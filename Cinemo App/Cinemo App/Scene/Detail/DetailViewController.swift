@@ -128,7 +128,7 @@ extension DetailViewController: ApplyTheme {
     }
 
     func applyThemeView() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = self.theme.backgroundColor
     }
 
     func applyThemeNavigationBar() {
