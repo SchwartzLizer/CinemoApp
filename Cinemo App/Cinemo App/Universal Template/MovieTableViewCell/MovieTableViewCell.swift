@@ -38,7 +38,7 @@ class MovieTableViewCell: UITableViewCell {
 
   public var viewModel: MovieTableViewModel? {
     didSet {
-      onUpdated()
+      onInitialized()
     }
   }
 
@@ -61,7 +61,7 @@ class MovieTableViewCell: UITableViewCell {
 // MARK: Updated
 
 extension MovieTableViewCell: Updated {
-  internal func onUpdated() {
+  internal func onInitialized() {
     guard let model = self.viewModel?.movies else { return }
     self.nameLabel.text = model.titleEn
     self.genreLabel.text = model.genre

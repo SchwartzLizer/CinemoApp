@@ -34,7 +34,7 @@ class EmptyStateTableViewCell: UITableViewCell {
 
     var viewModel: EmptyStateViewModel? {
         didSet {
-            onUpdated()
+            onInitialized()
         }
     }
 
@@ -47,7 +47,7 @@ class EmptyStateTableViewCell: UITableViewCell {
 // MARK: Updated
 
 extension EmptyStateTableViewCell: Updated {
-    func onUpdated() {
+    func onInitialized() {
         self.updateLabel()
     }
 

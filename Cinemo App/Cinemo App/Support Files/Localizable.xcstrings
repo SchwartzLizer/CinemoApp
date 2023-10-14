@@ -56,6 +56,17 @@
         }
       }
     },
+    "removeFavourite" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favourite was removed"
+          }
+        }
+      }
+    },
     "seeMoreBTN" : {
       "extractionState" : "manual",
       "localizations" : {

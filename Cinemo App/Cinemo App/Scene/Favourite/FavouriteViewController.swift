@@ -27,7 +27,7 @@ class FavouriteViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         applyTheme()
-        self.onUpdated()
+        self.onInitialized()
     }
 
     // MARK: Public
@@ -132,7 +132,7 @@ class FavouriteViewController: UIViewController {
 // MARK: Updated
 
 extension FavouriteViewController: Updated {
-    func onUpdated() {
+    func onInitialized() {
         Publishers.CombineLatest3(self.viewModel.movieList, self.viewModel.searchQueryList, self.viewModel.errorState)
             .sink { [weak self] data, searchQuery, errorState in
                 guard let self = self else { return }

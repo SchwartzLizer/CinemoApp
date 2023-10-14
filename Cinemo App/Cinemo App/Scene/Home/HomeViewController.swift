@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         applyTheme()
-        self.onUpdated()
+        self.onInitialized()
     }
 
     // MARK: Internal
@@ -111,7 +111,7 @@ class HomeViewController: UIViewController {
 // MARK: Updated
 
 extension HomeViewController: Updated {
-    func onUpdated() {
+    func onInitialized() {
         Publishers.CombineLatest3(self.viewModel.movieList, self.viewModel.searchQueryList, self.viewModel.errorState)
             .sink { [weak self] data, searchQuery, errorState in
                 guard let self = self else { return }

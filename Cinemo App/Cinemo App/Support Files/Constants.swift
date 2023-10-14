@@ -9,12 +9,13 @@ import Foundation
 
 enum Constants {
 
-  enum Keys {
-    static let appName = "appName"
-    static let addFavourite = "addFavourite"
-    static let seeMoreBTN = "seeMoreBTN"
-    static let homeSearchBarPlaceHolder = "homeSearchBarPlaceHolder"
-  }
+    enum Keys {
+        static let appName = "appName"
+        static let addFavourite = "addFavourite"
+        static let removeFavourite = "removeFavourite"
+        static let seeMoreBTN = "seeMoreBTN"
+        static let homeSearchBarPlaceHolder = "homeSearchBarPlaceHolder"
+    }
 
-  
+
 }

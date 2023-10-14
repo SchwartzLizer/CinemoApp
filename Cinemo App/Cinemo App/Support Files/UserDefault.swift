@@ -36,6 +36,19 @@ class UserDefault {
         }
     }
 
+    func removeFavorite(data: Movie) {
+        var dataFavorite = self.getFavorite()
+        dataFavorite.removeAll { movie in
+            movie.id == data.id
+        }
+        do {
+            try defaults.setObject(dataFavorite, forKey: Constants.UserDefaultKey.favouriteKey)
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
+
 }
 
 extension Constants {

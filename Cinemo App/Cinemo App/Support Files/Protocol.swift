@@ -9,7 +9,7 @@ import Foundation
 
 // View
 protocol Updated {
-    func onUpdated()
+    func onInitialized()
 }
 protocol UserInterfaceSetup {
     func setupUI()
