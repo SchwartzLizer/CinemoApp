@@ -54,7 +54,8 @@ class MovieTableViewCell: UITableViewCell {
 
   // MARK: Private
 
-  private lazy var themeManager = ThemeManager.currentTheme()
+    private lazy var theme = StyleSheetManager.currentTheme()
+    private lazy var font = StyleSheetManager.currentFontTheme()
 
 }
 
@@ -101,30 +102,30 @@ extension MovieTableViewCell: ApplyTheme {
   // MARK: Private
 
   private func applyThemeLabel() {
-    self.nameLabel.applyThemeLabel(font: .boldSystemFont(ofSize: 16), color: self.themeManager.titleTextColor)
-    self.genreLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
-    self.dateLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
+    self.nameLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.titleTextColor)
+    self.genreLabel.applyThemeLabel(font: self.font.subtitleFont, color: self.theme.subtitleTextColor)
+    self.dateLabel.applyThemeLabel(font: self.font.subtitleFont, color: self.theme.subtitleTextColor)
   }
 
   private func applyThemeButton() {
     self.seeMoreButton.applyThemeButton(
       text: Constants.Keys.seeMoreBTN.localized(),
-      font: UIFont(name: Constants.Font.medium, size: 14)!,
-      color: self.themeManager.buttonTextColor,
+      font: self.font.seeMoreButtonFont,
+      color: self.theme.buttonTextColor,
       round: Constants.Radius.cornerRadiusCard)
   }
 
   private func applyThemeCardView() {
     self.cardView.applyTheme(
-      background: self.themeManager.cardBackgroundColor,
-      border: self.themeManager.cardBackgroundColor,
+      background: self.theme.cardBackgroundColor,
+      border: self.theme.cardBackgroundColor,
       radius: Constants.Radius.cornerRadiusCard)
   }
 
   private func applyThemeImageView() {
     self.imageMovie.applyTheme(
-      background: self.themeManager.cardBackgroundColor,
-      border: self.themeManager.cardBackgroundColor,
+      background: self.theme.cardBackgroundColor,
+      border: self.theme.cardBackgroundColor,
       radius: Constants.Radius.cornerRadiusCard)
   }
 

@@ -40,7 +40,8 @@ class EmptyStateTableViewCell: UITableViewCell {
 
     // MARK: Private
 
-    private lazy var themeManager = ThemeManager.currentTheme()
+    private lazy var theme = StyleSheetManager.currentTheme()
+    private lazy var font = StyleSheetManager.currentFontTheme()
 
 }
 
@@ -90,7 +91,7 @@ extension EmptyStateTableViewCell:ApplyTheme {
     }
 
     func applyThemeLabel() {
-        self.descriptionLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.titleTextColor)
+        self.descriptionLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.titleTextColor)
     }
 
 }

@@ -38,7 +38,7 @@
 		16EB1F212AD9633C00137223 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F1F2AD9633C00137223 /* MovieTableViewCell.xib */; };
 		16EB1F242AD964AC00137223 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 16EB1F232AD964AC00137223 /* Kingfisher */; };
 		16EB1F292AD9689500137223 /* MovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F282AD9689500137223 /* MovieTableViewModel.swift */; };
-		16EB1F2B2AD96A6C00137223 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F2A2AD96A6C00137223 /* ThemeManager.swift */; };
+		16EB1F2B2AD96A6C00137223 /* StyleSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F2A2AD96A6C00137223 /* StyleSheetManager.swift */; };
 		16EB1F302AD96CAC00137223 /* LabelPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F2F2AD96CAC00137223 /* LabelPreset.swift */; };
 		16EB1F342AD96E0800137223 /* ButtonPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F332AD96E0800137223 /* ButtonPreset.swift */; };
 		16EB1F372AD96F3E00137223 /* Kingfisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F362AD96F3E00137223 /* Kingfisher+Extension.swift */; };
@@ -129,7 +129,7 @@
 		16EB1F1E2AD9633C00137223 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		16EB1F1F2AD9633C00137223 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		16EB1F282AD9689500137223 /* MovieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewModel.swift; sourceTree = "<group>"; };
-		16EB1F2A2AD96A6C00137223 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		16EB1F2A2AD96A6C00137223 /* StyleSheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSheetManager.swift; sourceTree = "<group>"; };
 		16EB1F2F2AD96CAC00137223 /* LabelPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPreset.swift; sourceTree = "<group>"; };
 		16EB1F332AD96E0800137223 /* ButtonPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPreset.swift; sourceTree = "<group>"; };
 		16EB1F362AD96F3E00137223 /* Kingfisher+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kingfisher+Extension.swift"; sourceTree = "<group>"; };
@@ -302,7 +302,8 @@
 				16EB1ECB2AD94C8E00137223 /* Info.plist */,
 				16EB1EF62AD94F7300137223 /* Protocol.swift */,
 				16EB1F092AD9547500137223 /* Logger.swift */,
-				16EB1F2A2AD96A6C00137223 /* ThemeManager.swift */,
+				16EB1F2A2AD96A6C00137223 /* StyleSheetManager.swift */,
+				16EB1F572ADA901600137223 /* StyleSheets.swift */,
 				16EB1F2F2AD96CAC00137223 /* LabelPreset.swift */,
 				16EB1F332AD96E0800137223 /* ButtonPreset.swift */,
 				16EB1F382AD9706A00137223 /* Constants.swift */,
@@ -311,7 +312,6 @@
 				16EB1F422AD98E3B00137223 /* DateFormatter.swift */,
 				16EB1F532ADA8C9000137223 /* UserDefault.swift */,
 				16EB1F552ADA8F7A00137223 /* AlertUtility.swift */,
-				16EB1F572ADA901600137223 /* StyleSheets.swift */,
 				16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */,
 				16EB1F7B2ADAB4AF00137223 /* LoadingManager.swift */,
 			);
@@ -627,7 +627,7 @@
 				16EB1F862ADAD46200137223 /* FontManager.swift in Sources */,
 				16EB1F302AD96CAC00137223 /* LabelPreset.swift in Sources */,
 				16EB1EF72AD94F7300137223 /* Protocol.swift in Sources */,
-				16EB1F2B2AD96A6C00137223 /* ThemeManager.swift in Sources */,
+				16EB1F2B2AD96A6C00137223 /* StyleSheetManager.swift in Sources */,
 				16EB1F392AD9706A00137223 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,7 +34,8 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
 
   // MARK: Private
 
-  private lazy var themeManager = ThemeManager.currentTheme()
+    private lazy var theme = StyleSheetManager.currentTheme()
+    private lazy var font = StyleSheetManager.currentFontTheme()
 
 }
 
@@ -47,7 +48,7 @@ extension HeaderTableViewCell: ApplyTheme {
   }
 
   func applyLabel() {
-    self.headerLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
+      self.headerLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.subtitleTextColor)
   }
 
   func applyBackground() {

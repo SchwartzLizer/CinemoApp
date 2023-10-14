@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "addFavBTN" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to favourite"
+          }
+        }
+      }
+    },
     "addFavourite" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -52,6 +63,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The search was unsuccessful. Perhaps a movie is not accessible or has not yet been released."
+          }
+        }
+      }
+    },
+    "removeFavBTN" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove favourite"
           }
         }
       }

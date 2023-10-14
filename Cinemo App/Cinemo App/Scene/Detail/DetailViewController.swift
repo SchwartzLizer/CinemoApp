@@ -49,7 +49,8 @@ final class DetailViewController: UIViewController {
 
     // MARK: Private
 
-    private lazy var themeManager = ThemeManager.currentTheme()
+    private lazy var theme = StyleSheetManager.currentTheme()
+    private lazy var font = StyleSheetManager.currentFontTheme()
 
     private var viewModel: DetailViewModel
 
@@ -93,24 +94,24 @@ extension DetailViewController: ApplyTheme {
     }
 
     func applyThemeLabel() {
-        self.genreLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
-        self.nameLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.titleTextColor)
-        self.descriptionLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.titleTextColor)
+        self.genreLabel.applyThemeLabel(font: self.font.subtitleFont, color: self.theme.subtitleTextColor)
+        self.nameLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.titleTextColor)
+        self.descriptionLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.titleTextColor)
     }
 
     func applyThemeButton() {
         if self.viewModel.isAlreadyFav == true {
             self.addFavouriteButton.applyThemeButton(
-                text: "Remove favourite",
-                font: .systemFont(ofSize: 14),
+                text: Constants.Keys.removeFavBTN.localized(),
+                font: self.font.favoriteButtonFont,
                 color: .white,
                 round: self.addFavouriteButton.frame.height / 2.00,
                 backgroundColor: UIColor().hex("Ff0000"),
                 borderColor: UIColor().hex("Ff0000"))
         } else {
             self.addFavouriteButton.applyThemeButton(
-                text: "Add to favourite",
-                font: .systemFont(ofSize: 14),
+                text: Constants.Keys.addFavBTN.localized(),
+                font: self.font.favoriteButtonFont,
                 color: .white,
                 round: self.addFavouriteButton.frame.height / 2.00,
                 backgroundColor: UIColor().hex("f31e8b"),
@@ -120,8 +121,8 @@ extension DetailViewController: ApplyTheme {
 
     func applyThemeImageView() {
         self.imageMovie.applyTheme(
-            background: self.themeManager.cardBackgroundColor,
-            border: self.themeManager.cardBackgroundColor,
+            background: self.theme.cardBackgroundColor,
+            border: self.theme.cardBackgroundColor,
             radius: Constants.Radius.cornerRadiusCard)
     }
 

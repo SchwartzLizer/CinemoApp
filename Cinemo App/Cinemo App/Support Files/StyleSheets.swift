@@ -100,6 +100,39 @@ enum Theme: Int {
     }
   }
 
+}
+
+enum Fonts: Int {
+
+    case main
+
+    var favoriteButtonFont: UIFont {
+        switch self {
+        case .main:
+            return UIFont(name: Constants.Font.bold, size: 24)!
+        }
+    }
+
+    var seeMoreButtonFont: UIFont {
+        switch self {
+        case .main:
+            return UIFont(name: Constants.Font.bold, size: 14)!
+        }
+    }
+
+    var titleFont: UIFont {
+        switch self {
+        case .main:
+            return UIFont(name: Constants.Font.regular, size: 16)!
+        }
+    }
+
+    var subtitleFont: UIFont {
+        switch self {
+        case .main:
+            return UIFont(name: Constants.Font.regular, size: 14)!
+        }
+    }
 
 
 }

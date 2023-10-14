@@ -15,6 +15,8 @@ enum Constants {
         static let removeFavourite = "removeFavourite"
         static let seeMoreBTN = "seeMoreBTN"
         static let homeSearchBarPlaceHolder = "homeSearchBarPlaceHolder"
+        static let removeFavBTN = "removeFavBTN"
+        static let addFavBTN = "addFavBTN"
     }
 
 
