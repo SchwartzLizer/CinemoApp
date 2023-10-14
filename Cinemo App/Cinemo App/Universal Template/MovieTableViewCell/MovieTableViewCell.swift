@@ -65,7 +65,11 @@ extension MovieTableViewCell: Updated {
     guard let model = self.viewModel?.movies else { return }
     self.nameLabel.text = model.titleEn
     self.genreLabel.text = model.genre
-    self.dateLabel.text = DateFormatterUtility.convert(string: model.releaseDate ?? "", from: "YYYY-mm-dd", to: "MMMM dd YYYY", timeZone: .utc)
+    self.dateLabel.text = DateFormatterUtility.convert(
+      string: model.releaseDate ?? "",
+      from: Constants.DateFormat.serverDateFormat,
+      to: Constants.DateFormat.showDateFormat,
+      timeZone: .utc)
     self.imageMovie.setImageFromURL(url: URL(string: model.posterURL ?? ""))
   }
 }
@@ -91,6 +95,7 @@ extension MovieTableViewCell: ApplyTheme {
     self.applyThemeLabel()
     self.applyThemeButton()
     self.applyThemeCardView()
+    self.applyThemeImageView()
   }
 
   // MARK: Private
@@ -106,11 +111,18 @@ extension MovieTableViewCell: ApplyTheme {
       text: Constants.Keys.seeMoreBTN.localized(),
       font: .systemFont(ofSize: 14),
       color: self.themeManager.buttonTextColor,
-      round: false)
+      round: Constants.Radius.cornerRadiusCard)
   }
 
   private func applyThemeCardView() {
     self.cardView.applyTheme(
+      background: self.themeManager.cardBackgroundColor,
+      border: self.themeManager.cardBackgroundColor,
+      radius: Constants.Radius.cornerRadiusCard)
+  }
+
+  private func applyThemeImageView() {
+    self.imageMovie.applyTheme(
       background: self.themeManager.cardBackgroundColor,
       border: self.themeManager.cardBackgroundColor,
       radius: Constants.Radius.cornerRadiusCard)

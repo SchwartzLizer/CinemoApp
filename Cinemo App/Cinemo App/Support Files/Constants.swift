@@ -10,11 +10,10 @@ import Foundation
 enum Constants {
 
   enum Keys {
+    static let appName = "appName"
+    static let addFavourite = "addFavourite"
     static let seeMoreBTN = "seeMoreBTN"
   }
 
-  enum Radius {
-    static let cornerRadiusCard: CGFloat = 12.0
-  }
-
+  
 }

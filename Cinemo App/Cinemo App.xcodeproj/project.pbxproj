@@ -47,6 +47,14 @@
 		16EB1F3D2AD9711900137223 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F3C2AD9711900137223 /* String+Extension.swift */; };
 		16EB1F3F2AD9717C00137223 /* ViewPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F3E2AD9717C00137223 /* ViewPreset.swift */; };
 		16EB1F432AD98E3B00137223 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F422AD98E3B00137223 /* DateFormatter.swift */; };
+		16EB1F4A2ADA793700137223 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F492ADA793700137223 /* HeaderTableViewCell.swift */; };
+		16EB1F4C2ADA794000137223 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F4B2ADA794000137223 /* HeaderTableViewCell.xib */; };
+		16EB1F4F2ADA7C7400137223 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F4D2ADA7C7400137223 /* DetailViewController.swift */; };
+		16EB1F502ADA7C7400137223 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F4E2ADA7C7400137223 /* DetailViewController.xib */; };
+		16EB1F522ADA80AA00137223 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F512ADA80AA00137223 /* DetailViewModel.swift */; };
+		16EB1F542ADA8C9000137223 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F532ADA8C9000137223 /* UserDefault.swift */; };
+		16EB1F562ADA8F7A00137223 /* AlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F552ADA8F7A00137223 /* AlertUtility.swift */; };
+		16EB1F582ADA901600137223 /* StyleSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F572ADA901600137223 /* StyleSheets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +110,14 @@
 		16EB1F3C2AD9711900137223 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		16EB1F3E2AD9717C00137223 /* ViewPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPreset.swift; sourceTree = "<group>"; };
 		16EB1F422AD98E3B00137223 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		16EB1F492ADA793700137223 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		16EB1F4B2ADA794000137223 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		16EB1F4D2ADA7C7400137223 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		16EB1F4E2ADA7C7400137223 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		16EB1F512ADA80AA00137223 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		16EB1F532ADA8C9000137223 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		16EB1F552ADA8F7A00137223 /* AlertUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtility.swift; sourceTree = "<group>"; };
+		16EB1F572ADA901600137223 /* StyleSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSheets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +224,9 @@
 		16EB1EEF2AD94E7600137223 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				16EB1F4D2ADA7C7400137223 /* DetailViewController.swift */,
+				16EB1F512ADA80AA00137223 /* DetailViewModel.swift */,
+				16EB1F4E2ADA7C7400137223 /* DetailViewController.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -231,6 +250,9 @@
 				16EB1F3A2AD970B900137223 /* Localizable.xcstrings */,
 				16EB1F3E2AD9717C00137223 /* ViewPreset.swift */,
 				16EB1F422AD98E3B00137223 /* DateFormatter.swift */,
+				16EB1F532ADA8C9000137223 /* UserDefault.swift */,
+				16EB1F552ADA8F7A00137223 /* AlertUtility.swift */,
+				16EB1F572ADA901600137223 /* StyleSheets.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -259,6 +281,7 @@
 		16EB1F1C2AD962A100137223 /* Universal Template */ = {
 			isa = PBXGroup;
 			children = (
+				16EB1F482ADA78C500137223 /* Header */,
 				16EB1F1D2AD962C800137223 /* MovieTableViewCell */,
 			);
 			path = "Universal Template";
@@ -268,8 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				16EB1F1E2AD9633C00137223 /* MovieTableViewCell.swift */,
-				16EB1F1F2AD9633C00137223 /* MovieTableViewCell.xib */,
 				16EB1F282AD9689500137223 /* MovieTableViewModel.swift */,
+				16EB1F1F2AD9633C00137223 /* MovieTableViewCell.xib */,
 			);
 			path = MovieTableViewCell;
 			sourceTree = "<group>";
@@ -281,6 +304,15 @@
 				16EB1F3C2AD9711900137223 /* String+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		16EB1F482ADA78C500137223 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				16EB1F492ADA793700137223 /* HeaderTableViewCell.swift */,
+				16EB1F4B2ADA794000137223 /* HeaderTableViewCell.xib */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,7 +426,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				16EB1ECA2AD94C8E00137223 /* LaunchScreen.storyboard in Resources */,
+				16EB1F4C2ADA794000137223 /* HeaderTableViewCell.xib in Resources */,
 				16EB1F212AD9633C00137223 /* MovieTableViewCell.xib in Resources */,
+				16EB1F502ADA7C7400137223 /* DetailViewController.xib in Resources */,
 				16EB1F3B2AD970B900137223 /* Localizable.xcstrings in Resources */,
 				16EB1F002AD94FF100137223 /* Configuration.plist in Resources */,
 				16EB1EC72AD94C8E00137223 /* Assets.xcassets in Resources */,
@@ -426,10 +460,13 @@
 			files = (
 				16EB1F022AD94FF100137223 /* Router.swift in Sources */,
 				16EB1F0A2AD9547500137223 /* Logger.swift in Sources */,
+				16EB1F4F2ADA7C7400137223 /* DetailViewController.swift in Sources */,
+				16EB1F582ADA901600137223 /* StyleSheets.swift in Sources */,
 				16EB1F202AD9633C00137223 /* MovieTableViewCell.swift in Sources */,
 				16EB1F432AD98E3B00137223 /* DateFormatter.swift in Sources */,
 				16EB1F3D2AD9711900137223 /* String+Extension.swift in Sources */,
 				16EB1F292AD9689500137223 /* MovieTableViewModel.swift in Sources */,
+				16EB1F522ADA80AA00137223 /* DetailViewModel.swift in Sources */,
 				16EB1EFF2AD94FF100137223 /* RouterEnumeration.swift in Sources */,
 				16EB1EBE2AD94C8D00137223 /* AppDelegate.swift in Sources */,
 				16EB1F032AD94FF100137223 /* Configuration.swift in Sources */,
@@ -437,9 +474,12 @@
 				16EB1F3F2AD9717C00137223 /* ViewPreset.swift in Sources */,
 				16EB1EF22AD94EB300137223 /* HomeViewController.swift in Sources */,
 				16EB1F082AD9535000137223 /* MovieListModel.swift in Sources */,
+				16EB1F562ADA8F7A00137223 /* AlertUtility.swift in Sources */,
 				16EB1F372AD96F3E00137223 /* Kingfisher+Extension.swift in Sources */,
 				16EB1EF42AD94ED500137223 /* HomeViewModel.swift in Sources */,
+				16EB1F542ADA8C9000137223 /* UserDefault.swift in Sources */,
 				16EB1F012AD94FF100137223 /* Network.swift in Sources */,
+				16EB1F4A2ADA793700137223 /* HeaderTableViewCell.swift in Sources */,
 				16EB1F342AD96E0800137223 /* ButtonPreset.swift in Sources */,
 				16EB1F302AD96CAC00137223 /* LabelPreset.swift in Sources */,
 				16EB1EF72AD94F7300137223 /* Protocol.swift in Sources */,
@@ -637,6 +677,7 @@
 				DEVELOPMENT_TEAM = V7YAHHBGTK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cinemo App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Cinemo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Home;
@@ -666,6 +707,7 @@
 				DEVELOPMENT_TEAM = V7YAHHBGTK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Cinemo App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Cinemo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Home;

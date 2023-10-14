@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTableView()
+    applyTheme()
     self.onUpdated()
   }
 
@@ -42,17 +43,29 @@ class HomeViewController: UIViewController {
         withIdentifier: MovieTableViewCell.identifier,
         for: indexPath) as! MovieTableViewCell
       cell.viewModel = MovieTableViewModel(movies: data)
+      cell.selectionStyle = .none
+      cell.delegate = self
       return cell
     }
     dataSource.defaultRowAnimation = .automatic
     return dataSource
   }()
 
+  private lazy var themeManager = ThemeManager.currentTheme()
+
   private var cellList: [(identifier: String, nib: UINib)] {
     return [
       (
         identifier: MovieTableViewCell.identifier,
         nib: MovieTableViewCell.nib),
+    ]
+  }
+
+  private var cellHeaderList: [(identifier: String, nib: UINib)] {
+    return [
+      (
+        identifier: HeaderTableViewCell.identifier,
+        nib: HeaderTableViewCell.nib),
     ]
   }
 
@@ -72,33 +85,57 @@ extension HomeViewController: Updated {
   }
 }
 
-// MARK: UITableViewDelegate, UITableViewDataSource
+// MARK: UITableViewDelegate
 
 extension HomeViewController: UITableViewDelegate {
   func setupTableView() {
     self.cellList.forEach { identifier, nib in
       self.tableView.register(nib, forCellReuseIdentifier: identifier)
     }
+    self.cellHeaderList.forEach { identifier, nib in
+      self.tableView.register(nib, forHeaderFooterViewReuseIdentifier: identifier)
+    }
     self.tableView.delegate = self
-    self.tableView.dataSource = dataSource
+    self.tableView.dataSource = self.dataSource
     self.tableView.separatorStyle = .none
+    self.tableView.selectionFollowsFocus = false
+    self.tableView.allowsSelection = false
+    self.tableView.backgroundColor = .white
   }
-//
-//  func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-//    return 10
-//  }
-//
-//  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//    guard
-//      let cell = tableView
-//        .dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier, for: indexPath) as? MovieTableViewCell else
-//    {
-//      return UITableViewCell()
-//    }
-//    return cell
-//  }
 
+  func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
+    let headerView = tableView.dequeueReusableHeaderFooterView(
+      withIdentifier: HeaderTableViewCell.identifier) as! HeaderTableViewCell
+    headerView.headerLabel.text = "Movie Finder"
+    return headerView
+  }
 
+  func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
+    return 30
+  }
+
+}
+
+// MARK: Action, MovieTableViewCellDelegate
+
+extension HomeViewController: Action,MovieTableViewCellDelegate {
+  func didSelectViewMore(data: Movie) {
+    let detailVC = DetailViewController(viewModel: DetailViewModel(data: data))
+    self.navigationController?.pushViewController(detailVC, animated: true)
+  }
+}
+
+// MARK: ApplyTheme
+
+extension HomeViewController: ApplyTheme {
+  func applyTheme() {
+    self.applyThemeNavBar()
+  }
+
+  func applyThemeNavBar() {
+      
+    self.title = "Cinemo"
+  }
 }
 
 
