@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
     }
 
     private var viewModel = HomeViewModel()
+    private let refreshControl = UIRefreshControl()
 
     private lazy var dataSource: UITableViewDiffableDataSource<TableSection, Movie>? = {
         guard let tableView = self.tableView else {
@@ -114,6 +115,7 @@ extension HomeViewController: Updated {
                 } else {
                     self.updateTableView(data: searchQuery)
                 }
+                self.refreshControl.endRefreshing()
             }.store(in: &self.viewModel.cancellables)
     }
 
@@ -147,6 +149,8 @@ extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBar
         self.tableView.selectionFollowsFocus = false
         self.tableView.allowsSelection = false
         self.tableView.backgroundColor = .white
+        self.refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        self.tableView.refreshControl = self.refreshControl
     }
 
     func setupSearchView() {
@@ -183,8 +187,14 @@ extension HomeViewController: Action,MovieTableViewCellDelegate {
     }
 
     func searchBar(_: UISearchBar, textDidChange searchText: String) {
-        self.viewModel.searchMovieList(query: searchText)
+        viewModel.searchText.send(searchText)
     }
+
+    @objc
+    func handleRefresh() {
+        self.viewModel.refresh()
+    }
+
 
 }
 
@@ -197,11 +207,12 @@ extension HomeViewController: ApplyTheme {
 
     func applyThemeNavBar() {
         let favoriteButton = UIBarButtonItem(
-            image: UIImage(systemName: "heart"),
+            image: UIImage(systemName: "heart.fill"),
             style: .plain,
             target: self,
             action: #selector(self.didSelectFavorite))
-
+        favoriteButton.tintColor = .systemPink
+        self.navigationItem.rightBarButtonItem = favoriteButton
         self.title = Constants.Keys.appName.localized()
     }
 

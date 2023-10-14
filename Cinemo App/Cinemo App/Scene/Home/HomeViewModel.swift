@@ -16,6 +16,7 @@ class HomeViewModel: ViewModel {
 
     init() {
         self.requestMovieList()
+        self.setupBindings()
     }
 
     // MARK: Public
@@ -25,12 +26,18 @@ class HomeViewModel: ViewModel {
 
     // MARK: Internal
 
+    // MARK: Data
     private(set) var errorState: CurrentValueSubject<ErrorState, Never> = CurrentValueSubject(.none)
     private(set) var movieList: CurrentValueSubject<[Movie], Never> = CurrentValueSubject([])
     private(set) var searchQueryList: CurrentValueSubject<[Movie], Never> = CurrentValueSubject([])
 
-}
+    // MARK: Private
 
+    // MARK: Search
+    public var searchText = PassthroughSubject<String, Never>()
+    private var savedSearchText = ""
+
+}
 // MARK: RequestService
 
 extension HomeViewModel: RequestService {
@@ -41,15 +48,51 @@ extension HomeViewModel: RequestService {
             case .success(let data):
                 self.errorState.send(.none)
                 guard let data = data.movies else { return }
-                self.movieList.send(data)
+                self.processDataSource(data: data)
                 LoadingManager.shared.hideLoading()
             case .failure(let error):
                 self.errorState.send(.serviceNotFound)
+                self.searchQueryList.send([])
                 self.movieList.send([])
                 LoadingManager.shared.hideLoading()
                 Logger.print(error.localizedDescription)
             }
         }
+    }
+
+    func refresh() {
+        self.movieList.send([])
+        self.searchQueryList.send([])
+        self.requestMovieList()
+    }
+
+}
+
+// MARK: ProcessDataSource
+
+extension HomeViewModel: ProcessDataSource {
+
+    // MARK: Internal
+
+    func processDataSource(data: [Movie]) {
+        if self.isSearching {
+            self.movieList.send(data)
+            searchMovieList(query: self.savedSearchText)
+        } else {
+            self.movieList.send(data)
+        }
+    }
+
+    // MARK: Private
+
+    private func setupBindings() {
+        self.searchText
+            .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
+            .sink { [weak self] query in
+                self?.savedSearchText = query
+                self?.searchMovieList(query: query)
+            }
+            .store(in: &self.cancellables)
     }
 
 }
