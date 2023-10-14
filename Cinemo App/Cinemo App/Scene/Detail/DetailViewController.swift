@@ -63,46 +63,11 @@ extension DetailViewController: Updated {
         self.genreLabel.text = self.viewModel.data.genre
         self.descriptionLabel.text = self.viewModel.data.synopsisEn
         self.imageMovie.setImageFromURL(url: URL(string: self.viewModel.data.posterURL ?? ""))
-
-        self.addFavouriteButton.isHidden = false
-        if self.viewModel.isAlreadyFav == true {
-            self.addFavouriteButton.applyTheme(
-                text: "Remove favourite",
-                font: .systemFont(ofSize: 14),
-                color: .white,
-                round: Constants.Radius.cornerRadiusCard,
-                backgroundColor: UIColor().hex("Ff0000"),
-                borderColor: UIColor().hex("Ff0000"))
-        } else {
-            self.addFavouriteButton.applyTheme(
-                text: "Add to favourite",
-                font: .systemFont(ofSize: 14),
-                color: .white,
-                round: Constants.Radius.cornerRadiusCard,
-                backgroundColor: UIColor().hex("f31e8b"),
-                borderColor: UIColor().hex("f31e8b"))
-        }
     }
 
     func onUpdated() {
         self.viewModel.onUpdated = { [weak self] in
-            if self?.viewModel.isAlreadyFav == true {
-                self?.addFavouriteButton.applyTheme(
-                    text: "Remove favourite",
-                    font: .systemFont(ofSize: 14),
-                    color: .white,
-                    round: Constants.Radius.cornerRadiusCard,
-                    backgroundColor: UIColor().hex("Ff0000"),
-                    borderColor: UIColor().hex("Ff0000"))
-            } else {
-                self?.addFavouriteButton.applyTheme(
-                    text: "Add to favourite",
-                    font: .systemFont(ofSize: 14),
-                    color: .white,
-                    round: Constants.Radius.cornerRadiusCard,
-                    backgroundColor: UIColor().hex("f31e8b"),
-                    borderColor: UIColor().hex("f31e8b"))
-            }
+            self?.applyThemeButton()
         }
     }
 }
@@ -134,7 +99,23 @@ extension DetailViewController: ApplyTheme {
     }
 
     func applyThemeButton() {
-        self.addFavouriteButton.isHidden = true
+        if self.viewModel.isAlreadyFav == true {
+            self.addFavouriteButton.applyTheme(
+                text: "Remove favourite",
+                font: .systemFont(ofSize: 14),
+                color: .white,
+                round: self.addFavouriteButton.frame.height / 2.00,
+                backgroundColor: UIColor().hex("Ff0000"),
+                borderColor: UIColor().hex("Ff0000"))
+        } else {
+            self.addFavouriteButton.applyTheme(
+                text: "Add to favourite",
+                font: .systemFont(ofSize: 14),
+                color: .white,
+                round: self.addFavouriteButton.frame.height / 2.00,
+                backgroundColor: UIColor().hex("f31e8b"),
+                borderColor: UIColor().hex("f31e8b"))
+        }
     }
 
     func applyThemeImageView() {
