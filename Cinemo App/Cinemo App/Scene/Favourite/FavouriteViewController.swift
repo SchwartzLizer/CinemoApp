@@ -1,28 +1,48 @@
 //
-//  HomeViewController.swift
+//  FavouriteViewController.swift
 //  Cinemo App
 //
-//  Created by Tanatip Denduangchai on 10/13/23.
+//  Created by Tanatip Denduangchai on 10/14/23.
 //
 
 import UIKit
 import Combine
 
-// MARK: - HomeViewController
+// MARK: - FavouriteViewController
 
-class HomeViewController: UIViewController {
+class FavouriteViewController: UIViewController {
 
     // MARK: Lifecycle
 
+    required init(viewModel: FavouriteViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: FavouriteViewController.identifier, bundle: nil)
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
-        self.applyTheme()
+        setupUI()
+        applyTheme()
         self.onInitialized()
     }
 
     deinit {
         self.viewModel.cancellables.forEach { $0.cancel() }
+    }
+
+    // MARK: Public
+
+
+    public static var nib: UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+
+    public static var identifier: String {
+        return String(describing: self)
     }
 
     // MARK: Internal
@@ -36,7 +56,7 @@ class HomeViewController: UIViewController {
         case main
     }
 
-    private var viewModel: HomeViewModel = HomeViewModel()
+    private var viewModel : FavouriteViewModel
     private let refreshControl = UIRefreshControl()
 
     private lazy var dataSource: UITableViewDiffableDataSource<TableSection, Movie>? = {
@@ -83,6 +103,7 @@ class HomeViewController: UIViewController {
                 cell.selectionStyle = .none
                 cell.delegate = self
                 return cell
+
             }
         }
         dataSource.defaultRowAnimation = .fade
@@ -115,7 +136,7 @@ class HomeViewController: UIViewController {
 
 // MARK: Updated
 
-extension HomeViewController: Updated {
+extension FavouriteViewController: Updated {
     func onInitialized() {
         Publishers.CombineLatest3(self.viewModel.movieList, self.viewModel.searchQueryList, self.viewModel.errorState)
             .sink { [weak self] data, searchQuery, errorState in
@@ -142,7 +163,7 @@ extension HomeViewController: Updated {
 
 // MARK: UserInterfaceSetup, UITableViewDelegate, UISearchBarDelegate
 
-extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBarDelegate {
+extension FavouriteViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBarDelegate {
     func setupUI() {
         self.setupSearchView()
         self.setupTableView()
@@ -174,7 +195,7 @@ extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBar
     func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(
             withIdentifier: HeaderTableViewCell.identifier) as! HeaderTableViewCell
-        headerView.headerLabel.text = "Movie Finder"
+        headerView.headerLabel.text = "My Favourite"
         return headerView
     }
 
@@ -186,9 +207,10 @@ extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBar
 
 // MARK: Action, MovieTableViewCellDelegate
 
-extension HomeViewController: Action,MovieTableViewCellDelegate {
+extension FavouriteViewController: Action,MovieTableViewCellDelegate {
     func didSelectFavourite() {
-        // No Need to do
+        HomeViewModelUpdater.shared.updateSubject.send(())
+        self.viewModel.getFavourite()
     }
     
     func didSelectViewMore(data: Movie) {
@@ -196,40 +218,26 @@ extension HomeViewController: Action,MovieTableViewCellDelegate {
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 
-    @objc
-    func didSelectFavorite() {
-        let favoriteVC = FavouriteViewController(viewModel: FavouriteViewModel())
-        self.navigationController?.pushViewController(favoriteVC, animated: true)
-    }
-
     func searchBar(_: UISearchBar, textDidChange searchText: String) {
-        viewModel.searchText.send(searchText)
+        self.viewModel.searchText.send(searchText)
     }
 
     @objc
     func handleRefresh() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.viewModel.refresh()
-        }
+        self.viewModel.refresh()
     }
+
 
 }
 
 // MARK: ApplyTheme
 
-extension HomeViewController: ApplyTheme {
+extension FavouriteViewController: ApplyTheme {
     func applyTheme() {
         self.applyThemeNavBar()
     }
 
     func applyThemeNavBar() {
-        let favoriteButton = UIBarButtonItem(
-            image: UIImage(systemName: "heart.fill"),
-            style: .plain,
-            target: self,
-            action: #selector(self.didSelectFavorite))
-        favoriteButton.tintColor = .systemPink
-        self.navigationItem.rightBarButtonItem = favoriteButton
         self.title = Constants.Keys.appName.localized()
     }
 
