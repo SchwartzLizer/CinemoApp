@@ -46,8 +46,10 @@ enum StyleSheetManager {
     }
 
     static func currentFontTheme() -> Fonts {
-        if let storedFontThemeValue = UserDefaults.standard.value(forKey: SelectedFontKey) as? Int,
-           let storedFontTheme = Fonts(rawValue: storedFontThemeValue) {
+        if
+            let storedFontThemeValue = UserDefaults.standard.value(forKey: SelectedFontKey) as? Int,
+            let storedFontTheme = Fonts(rawValue: storedFontThemeValue)
+        {
             return storedFontTheme
         } else {
             return .main
@@ -59,6 +61,25 @@ enum StyleSheetManager {
         UserDefaults.standard.setValue(theme.rawValue, forKey: SelectedThemeKey)
         UserDefaults.standard.synchronize()
         // You get your current (selected) theme and apply the main color to the tintColor property of your application’s window.
+        for windowScene in UIApplication.shared.connectedScenes {
+            if let windowScene = windowScene as? UIWindowScene {
+                for window in windowScene.windows {
+                    window.overrideUserInterfaceStyle = theme.userInterfaceStyle
+                }
+            }
+        }
+
+        // NavigationBar
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = theme.navigationBarBackgroundColor
+        appearance.backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
+        appearance.shadowColor = .clear
+
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().tintColor = theme.navigationBarTintColor
     }
 
 }

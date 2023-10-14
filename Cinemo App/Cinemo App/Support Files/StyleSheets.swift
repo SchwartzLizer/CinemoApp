@@ -23,6 +23,13 @@ enum Theme: Int {
 
     // MARK: Internal
 
+    var userInterfaceStyle: UIUserInterfaceStyle {
+        switch self {
+        case .LightMode: return .light
+        case .DarkMode: return .dark
+        }
+    }
+
     var backgroundColor: UIColor {
         switch self {
         case .LightMode:
@@ -76,6 +83,16 @@ enum Theme: Int {
             return UIColor().hex("#ff3144")
         }
     }
+
+    var moonColor: UIColor {
+        switch self {
+        case .LightMode:
+            return .black
+        case .DarkMode:
+            return .white
+        }
+    }
+
 
     var tableViewBackgroundColor: UIColor {
         switch self {

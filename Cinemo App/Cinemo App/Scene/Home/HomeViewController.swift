@@ -218,6 +218,13 @@ extension HomeViewController: Action,MovieTableViewCellDelegate {
         }
     }
 
+    @objc
+    func didSelectChangeMode() {
+        HapticFeedback.mediumImpact()
+        AppUtility().toggleMode()
+    }
+
+
 }
 
 // MARK: ApplyTheme
@@ -234,22 +241,17 @@ extension HomeViewController: ApplyTheme {
             target: self,
             action: #selector(self.didSelectFavorite))
         favoriteButton.tintColor = self.theme.heartColor
+
+        let changeModeButton = UIBarButtonItem(
+            image: UIImage(systemName: "moon.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(self.didSelectChangeMode))
+        changeModeButton.tintColor = self.theme.moonColor
+
+        self.navigationItem.leftBarButtonItem = changeModeButton
         self.navigationItem.rightBarButtonItem = favoriteButton
         self.title = Constants.Keys.appName.localized()
-
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = self.theme.navigationBarBackgroundColor
-        appearance.backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
-        appearance.shadowColor = .clear
-
-        // Apply the appearance
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.compactAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-
-        // Set the tint color
-        navigationController?.navigationBar.tintColor = self.theme.navigationBarTintColor
     }
 
 }
