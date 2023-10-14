@@ -61,11 +61,6 @@ extension FavouriteViewModel: RequestService {
         self.searchQueryList.send([])
         self.getFavourite()
     }
-
-    func onUpdated() {
-
-    }
-
 }
 
 // MARK: ProcessDataSource

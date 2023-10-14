@@ -79,6 +79,7 @@ extension DetailViewController: Action {
     @IBAction
     func didSelectButton(_: UIButton) {
         HapticFeedback.mediumImpact()
+        HomeViewModelUpdater.shared.updateSubject.send(())
         self.viewModel.updateFavourite()
     }
 }

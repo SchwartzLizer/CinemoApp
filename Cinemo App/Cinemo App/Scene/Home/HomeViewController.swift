@@ -24,6 +24,19 @@ class HomeViewController: UIViewController {
         }
     }
 
+    override func viewWillDisappear(_: Bool) {
+        self.viewModel.currentOffset = self.tableView.contentOffset
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        if self.viewModel.needtoReload {
+            self.tableView.reloadData()
+            self.viewModel.needtoReload = false
+        }
+        self.tableView.layoutIfNeeded() // Force layout update
+        self.tableView.setContentOffset(self.viewModel.currentOffset, animated: false)
+    }
+
     deinit {
         self.viewModel.cancellables.forEach { $0.cancel() }
     }
@@ -141,6 +154,7 @@ extension HomeViewController: Updated {
         snapshot.appendItems(data)
         self.dataSource?.apply(snapshot, animatingDifferences: true)
     }
+
 }
 
 
