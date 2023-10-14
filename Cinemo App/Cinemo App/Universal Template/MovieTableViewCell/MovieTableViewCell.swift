@@ -65,7 +65,8 @@ extension MovieTableViewCell: Updated {
     guard let model = self.viewModel?.movies else { return }
     self.nameLabel.text = model.titleEn
     self.genreLabel.text = model.genre
-    self.imageMovie.setImageFromURL(url: URL(string: model.posterOri ?? ""))
+    self.dateLabel.text = DateFormatterUtility.convert(string: model.releaseDate ?? "", from: "YYYY-mm-dd", to: "MMMM dd YYYY", timeZone: .utc)
+    self.imageMovie.setImageFromURL(url: URL(string: model.posterURL ?? ""))
   }
 }
 
@@ -114,6 +115,5 @@ extension MovieTableViewCell: ApplyTheme {
       border: self.themeManager.cardBackgroundColor,
       radius: Constants.Radius.cornerRadiusCard)
   }
-
 
 }

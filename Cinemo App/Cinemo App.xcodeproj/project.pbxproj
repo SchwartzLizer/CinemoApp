@@ -46,6 +46,7 @@
 		16EB1F3B2AD970B900137223 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F3A2AD970B900137223 /* Localizable.xcstrings */; };
 		16EB1F3D2AD9711900137223 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F3C2AD9711900137223 /* String+Extension.swift */; };
 		16EB1F3F2AD9717C00137223 /* ViewPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F3E2AD9717C00137223 /* ViewPreset.swift */; };
+		16EB1F432AD98E3B00137223 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F422AD98E3B00137223 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		16EB1F3A2AD970B900137223 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		16EB1F3C2AD9711900137223 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		16EB1F3E2AD9717C00137223 /* ViewPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPreset.swift; sourceTree = "<group>"; };
+		16EB1F422AD98E3B00137223 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				16EB1F382AD9706A00137223 /* Constants.swift */,
 				16EB1F3A2AD970B900137223 /* Localizable.xcstrings */,
 				16EB1F3E2AD9717C00137223 /* ViewPreset.swift */,
+				16EB1F422AD98E3B00137223 /* DateFormatter.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				16EB1F022AD94FF100137223 /* Router.swift in Sources */,
 				16EB1F0A2AD9547500137223 /* Logger.swift in Sources */,
 				16EB1F202AD9633C00137223 /* MovieTableViewCell.swift in Sources */,
+				16EB1F432AD98E3B00137223 /* DateFormatter.swift in Sources */,
 				16EB1F3D2AD9711900137223 /* String+Extension.swift in Sources */,
 				16EB1F292AD9689500137223 /* MovieTableViewModel.swift in Sources */,
 				16EB1EFF2AD94FF100137223 /* RouterEnumeration.swift in Sources */,
