@@ -209,16 +209,19 @@ extension FavouriteViewController: UserInterfaceSetup,UITableViewDelegate,UISear
 
 extension FavouriteViewController: Action,MovieTableViewCellDelegate {
     func didSelectFavourite() {
+        HapticFeedback.successNotification()
         HomeViewModelUpdater.shared.updateSubject.send(())
         self.viewModel.getFavourite()
     }
     
     func didSelectViewMore(data: Movie) {
+        HapticFeedback.mediumImpact()
         let detailVC = DetailViewController(viewModel: DetailViewModel(data: data))
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 
     func searchBar(_: UISearchBar, textDidChange searchText: String) {
+        HapticFeedback.lightImpact()
         self.viewModel.searchText.send(searchText)
     }
 

@@ -188,21 +188,24 @@ extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBar
 
 extension HomeViewController: Action,MovieTableViewCellDelegate {
     func didSelectFavourite() {
-        // No Need to do
+        HapticFeedback.successNotification()
     }
     
     func didSelectViewMore(data: Movie) {
+        HapticFeedback.lightImpact()
         let detailVC = DetailViewController(viewModel: DetailViewModel(data: data))
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 
     @objc
     func didSelectFavorite() {
+        HapticFeedback.mediumImpact()
         let favoriteVC = FavouriteViewController(viewModel: FavouriteViewModel())
         self.navigationController?.pushViewController(favoriteVC, animated: true)
     }
 
     func searchBar(_: UISearchBar, textDidChange searchText: String) {
+        HapticFeedback.lightImpact()
         viewModel.searchText.send(searchText)
     }
 

@@ -84,6 +84,7 @@
 		16EB1FC42ADAD86100137223 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1FB62ADAD86100137223 /* Rubik-SemiBold.ttf */; };
 		16EB1FC52ADAD86100137223 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1FB72ADAD86100137223 /* Rubik-Light.ttf */; };
 		16EB1FC72ADAE74800137223 /* Like.json in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1FC62ADAE74800137223 /* Like.json */; };
+		16EB1FC92ADAFDDC00137223 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FC82ADAFDDC00137223 /* HapticFeedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		16EB1FB62ADAD86100137223 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
 		16EB1FB72ADAD86100137223 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
 		16EB1FC62ADAE74800137223 /* Like.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Like.json; sourceTree = "<group>"; };
+		16EB1FC82ADAFDDC00137223 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 				16EB1F552ADA8F7A00137223 /* AlertUtility.swift */,
 				16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */,
 				16EB1F7B2ADAB4AF00137223 /* LoadingManager.swift */,
+				16EB1FC82ADAFDDC00137223 /* HapticFeedback.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				16EB1F3D2AD9711900137223 /* String+Extension.swift in Sources */,
 				16EB1F6C2ADAA0A200137223 /* AssetsManager.swift in Sources */,
 				16EB1F292AD9689500137223 /* MovieTableViewModel.swift in Sources */,
+				16EB1FC92ADAFDDC00137223 /* HapticFeedback.swift in Sources */,
 				16EB1F522ADA80AA00137223 /* DetailViewModel.swift in Sources */,
 				16EB1EFF2AD94FF100137223 /* RouterEnumeration.swift in Sources */,
 				16EB1EBE2AD94C8D00137223 /* AppDelegate.swift in Sources */,
