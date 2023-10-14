@@ -10,5 +10,6 @@ import Foundation
 extension Constants {
     enum Lottie {
         static let notFound = "NotFound"
+        static let loading = "Loading"
     }
 }

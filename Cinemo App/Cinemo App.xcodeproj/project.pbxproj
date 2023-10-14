@@ -65,6 +65,7 @@
 		16EB1F772ADAAAAC00137223 /* EmptyStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F752ADAAAAC00137223 /* EmptyStateTableViewCell.swift */; };
 		16EB1F782ADAAAAC00137223 /* EmptyStateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F762ADAAAAC00137223 /* EmptyStateTableViewCell.xib */; };
 		16EB1F7A2ADAB40D00137223 /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F792ADAB40C00137223 /* Loading.json */; };
+		16EB1F7C2ADAB4AF00137223 /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F7B2ADAB4AF00137223 /* LoadingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		16EB1F752ADAAAAC00137223 /* EmptyStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateTableViewCell.swift; sourceTree = "<group>"; };
 		16EB1F762ADAAAAC00137223 /* EmptyStateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateTableViewCell.xib; sourceTree = "<group>"; };
 		16EB1F792ADAB40C00137223 /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
+		16EB1F7B2ADAB4AF00137223 /* LoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 				16EB1F552ADA8F7A00137223 /* AlertUtility.swift */,
 				16EB1F572ADA901600137223 /* StyleSheets.swift */,
 				16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */,
+				16EB1F7B2ADAB4AF00137223 /* LoadingManager.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				16EB1F522ADA80AA00137223 /* DetailViewModel.swift in Sources */,
 				16EB1EFF2AD94FF100137223 /* RouterEnumeration.swift in Sources */,
 				16EB1EBE2AD94C8D00137223 /* AppDelegate.swift in Sources */,
+				16EB1F7C2ADAB4AF00137223 /* LoadingManager.swift in Sources */,
 				16EB1F032AD94FF100137223 /* Configuration.swift in Sources */,
 				16EB1F6E2ADAA12B00137223 /* EmptyStateViewModel.swift in Sources */,
 				16EB1EC02AD94C8D00137223 /* SceneDelegate.swift in Sources */,

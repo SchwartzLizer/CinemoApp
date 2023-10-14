@@ -35,15 +35,18 @@ class HomeViewModel: ViewModel {
 
 extension HomeViewModel: RequestService {
     func requestMovieList() {
+        LoadingManager.shared.showLoading()
         Network.shared.request(router: .movieList) { (result: Result<MovieListModel>) in
             switch result {
             case .success(let data):
                 self.errorState.send(.none)
                 guard let data = data.movies else { return }
                 self.movieList.send(data)
+                LoadingManager.shared.hideLoading()
             case .failure(let error):
                 self.errorState.send(.serviceNotFound)
                 self.movieList.send([])
+                LoadingManager.shared.hideLoading()
                 Logger.print(error.localizedDescription)
             }
         }
