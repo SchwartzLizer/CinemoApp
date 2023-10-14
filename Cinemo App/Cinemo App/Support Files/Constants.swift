@@ -13,6 +13,7 @@ enum Constants {
     static let appName = "appName"
     static let addFavourite = "addFavourite"
     static let seeMoreBTN = "seeMoreBTN"
+    static let homeSearchBarPlaceHolder = "homeSearchBarPlaceHolder"
   }
 
   

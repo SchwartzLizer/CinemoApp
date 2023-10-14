@@ -23,6 +23,17 @@
         }
       }
     },
+    "homeSearchBarPlaceHolder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search Movie"
+          }
+        }
+      }
+    },
     "seeMoreBTN" : {
       "extractionState" : "manual",
       "localizations" : {

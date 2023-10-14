@@ -11,6 +11,9 @@ import Foundation
 protocol Updated {
     func onUpdated()
 }
+protocol UserInterfaceSetup {
+    func setupUI()
+}
 protocol Action {}
 protocol ApplyTheme {
     func applyTheme()
