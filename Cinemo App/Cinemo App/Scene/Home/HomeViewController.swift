@@ -85,7 +85,8 @@ class HomeViewController: UIViewController {
         return dataSource
     }()
 
-    private lazy var themeManager = StyleSheetManager.currentTheme()
+    private lazy var theme = StyleSheetManager.currentTheme()
+    private lazy var font = StyleSheetManager.currentFontTheme()
 
     private var cellList: [(identifier: String, nib: UINib)] {
         return [
