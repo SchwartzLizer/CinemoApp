@@ -8,6 +8,14 @@
 import Foundation
 import Combine
 
+
+// MARK: - HomeViewModelUpdater
+
+class HomeViewModelUpdater {
+    static let shared = HomeViewModelUpdater()
+    let updateSubject = PassthroughSubject<Void, Never>()
+}
+
 // MARK: - HomeViewModel
 
 class HomeViewModel: ViewModel {
@@ -17,6 +25,13 @@ class HomeViewModel: ViewModel {
     init() {
         self.requestMovieList()
         self.setupBindings()
+
+        HomeViewModelUpdater.shared.updateSubject
+            .sink { [weak self] in
+                self?.slicentUpdate = true
+                self?.refresh()
+            }
+            .store(in: &self.cancellables)
     }
 
     // MARK: Public
@@ -37,6 +52,7 @@ class HomeViewModel: ViewModel {
     // MARK: Private
 
     private var savedSearchText = ""
+    private var slicentUpdate = false
 
 }
 
@@ -44,20 +60,38 @@ class HomeViewModel: ViewModel {
 
 extension HomeViewModel: RequestService {
     func requestMovieList() {
-        LoadingManager.shared.showLoading()
-        Network.shared.request(router: .movieList) { (result: Result<MovieListModel>) in
-            switch result {
-            case .success(let data):
-                self.errorState.send(.none)
-                guard let data = data.movies else { return }
-                self.processDataSource(data: data)
-                LoadingManager.shared.hideLoading()
-            case .failure(let error):
-                self.errorState.send(.serviceNotFound)
-                self.searchQueryList.send([])
-                self.movieList.send([])
-                LoadingManager.shared.hideLoading()
-                Logger.print(error.localizedDescription)
+        if !self.slicentUpdate {
+            LoadingManager.shared.showLoading()
+            Network.shared.request(router: .movieList) { (result: Result<MovieListModel>) in
+                switch result {
+                case .success(let data):
+                    self.errorState.send(.none)
+                    guard let data = data.movies else { return }
+                    self.processDataSource(data: data)
+                    LoadingManager.shared.hideLoading()
+                    self.slicentUpdate = false
+                case .failure(let error):
+                    self.errorState.send(.serviceNotFound)
+                    self.searchQueryList.send([])
+                    self.movieList.send([])
+                    LoadingManager.shared.hideLoading()
+                    Logger.print(error.localizedDescription)
+                    self.slicentUpdate = false
+                }
+            }
+        } else {
+            Network.shared.request(router: .movieList) { (result: Result<MovieListModel>) in
+                switch result {
+                case .success(let data):
+                    self.errorState.send(.none)
+                    guard let data = data.movies else { return }
+                    self.processDataSource(data: data)
+                case .failure(let error):
+                    self.errorState.send(.serviceNotFound)
+                    self.searchQueryList.send([])
+                    self.movieList.send([])
+                    Logger.print(error.localizedDescription)
+                }
             }
         }
     }
@@ -121,3 +155,4 @@ extension HomeViewModel: Logic {
     }
 
 }
+

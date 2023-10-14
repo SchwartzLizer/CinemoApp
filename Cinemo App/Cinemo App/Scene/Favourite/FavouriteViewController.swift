@@ -209,6 +209,7 @@ extension FavouriteViewController: UserInterfaceSetup,UITableViewDelegate,UISear
 
 extension FavouriteViewController: Action,MovieTableViewCellDelegate {
     func didSelectFavourite() {
+        HomeViewModelUpdater.shared.updateSubject.send(())
         self.viewModel.getFavourite()
     }
     

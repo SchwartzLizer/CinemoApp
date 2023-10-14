@@ -18,10 +18,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.setupUI()
         self.applyTheme()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        self.viewModel = HomeViewModel()
         self.onInitialized()
     }
 
@@ -40,7 +36,7 @@ class HomeViewController: UIViewController {
         case main
     }
 
-    private var viewModel: HomeViewModel!
+    private var viewModel: HomeViewModel = HomeViewModel()
     private let refreshControl = UIRefreshControl()
 
     private lazy var dataSource: UITableViewDiffableDataSource<TableSection, Movie>? = {
