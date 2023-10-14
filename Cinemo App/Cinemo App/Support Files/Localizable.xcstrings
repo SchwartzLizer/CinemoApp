@@ -23,6 +23,17 @@
         }
       }
     },
+    "Favourite_Empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no favorite. Please include your favorite movie."
+          }
+        }
+      }
+    },
     "homeSearchBarPlaceHolder" : {
       "extractionState" : "manual",
       "localizations" : {

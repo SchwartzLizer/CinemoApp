@@ -55,6 +55,15 @@ extension EmptyStateTableViewCell: Updated {
         guard let viewModel = self.viewModel else { return }
         self.descriptionLabel.text = viewModel.type.rawValue.localized()
         self.constraintsHeight.constant = UIScreen.main.bounds.height * 0.7
+        switch self.viewModel?.type {
+        case .notFound,.serviceNotFound,.unknown:
+            self.lottieAnimationView.animation = LottieAnimation.named(Constants.Lottie.notFound)
+            self.lottieAnimationView.play()
+        case .favouriteEmpty:
+            self.lottieAnimationView.animation = LottieAnimation.named(Constants.Lottie.noFavourite)
+            self.lottieAnimationView.play()
+        case nil,.none?: break
+        }
     }
 
 
@@ -68,9 +77,7 @@ extension EmptyStateTableViewCell: UserInterfaceSetup {
     }
 
     func setupLottie() {
-        self.lottieAnimationView.animation = LottieAnimation.named(Constants.Lottie.notFound)
         self.lottieAnimationView.loopMode = .loop
-        self.lottieAnimationView.play()
     }
 
 }

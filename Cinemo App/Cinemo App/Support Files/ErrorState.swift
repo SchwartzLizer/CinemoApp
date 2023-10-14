@@ -11,5 +11,6 @@ enum ErrorState: String {
     case notFound = "Not_Found"
     case serviceNotFound = "Service_Not_Found"
     case unknown = "Unknown"
+    case favouriteEmpty = "Favourite_Empty"
     case none = ""
 }

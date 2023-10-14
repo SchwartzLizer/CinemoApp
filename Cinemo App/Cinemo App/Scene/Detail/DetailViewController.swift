@@ -70,6 +70,7 @@ extension DetailViewController: Updated {
 extension DetailViewController: Action {
   @IBAction
   func didSelectAddFavourite(_: UIButton) { 
+      UserDefault().addFavorite(data: self.viewModel.data)
       AlertUtility.showAlert(on: self, title: Constants.Keys.appName.localized(), message: Constants.Keys.addFavourite.localized())
   }
 }

@@ -1,21 +1,22 @@
 //
-//  HomeViewModel.swift
+//  FavouriteViewModel.swift
 //  Cinemo App
 //
-//  Created by Tanatip Denduangchai on 10/13/23.
+//  Created by Tanatip Denduangchai on 10/14/23.
 //
+
 
 import Foundation
 import Combine
 
-// MARK: - HomeViewModel
+// MARK: - FavouriteViewModel
 
-class HomeViewModel: ViewModel {
+class FavouriteViewModel: ViewModel {
 
     // MARK: Lifecycle
 
     init() {
-        self.requestMovieList()
+        getFavourite()
         self.setupBindings()
     }
 
@@ -37,42 +38,35 @@ class HomeViewModel: ViewModel {
     // MARK: Private
 
     private var savedSearchText = ""
+    private var isNoFavorite = false
 
 }
 
 // MARK: RequestService
 
-extension HomeViewModel: RequestService {
-    func requestMovieList() {
-        LoadingManager.shared.showLoading()
-        Network.shared.request(router: .movieList) { (result: Result<MovieListModel>) in
-            switch result {
-            case .success(let data):
-                self.errorState.send(.none)
-                guard let data = data.movies else { return }
-                self.processDataSource(data: data)
-                LoadingManager.shared.hideLoading()
-            case .failure(let error):
-                self.errorState.send(.serviceNotFound)
-                self.searchQueryList.send([])
-                self.movieList.send([])
-                LoadingManager.shared.hideLoading()
-                Logger.print(error.localizedDescription)
-            }
+extension FavouriteViewModel: RequestService {
+    func getFavourite() {
+        if UserDefault().getFavorite().isEmpty {
+            self.isNoFavorite = true
+            self.errorState.send(.favouriteEmpty)
+        } else {
+            self.isNoFavorite = false
+            self.errorState.send(.none)
+            self.movieList.send(UserDefault().getFavorite())
         }
     }
 
     func refresh() {
         self.movieList.send([])
         self.searchQueryList.send([])
-        self.requestMovieList()
+        self.getFavourite()
     }
 
 }
 
 // MARK: ProcessDataSource
 
-extension HomeViewModel: ProcessDataSource {
+extension FavouriteViewModel: ProcessDataSource {
 
     // MARK: Internal
 
@@ -101,22 +95,26 @@ extension HomeViewModel: ProcessDataSource {
 
 // MARK: Logic
 
-extension HomeViewModel: Logic {
+extension FavouriteViewModel: Logic {
     func searchMovieList(query: String) {
-        if query.isEmpty {
-            self.errorState.send(.none)
-            self.isSearching = false
-            self.searchQueryList.send([])
+        if self.isNoFavorite {
+            self.errorState.send(.favouriteEmpty)
         } else {
-            self.isSearching = true
-            let allMovies = self.movieList.value
-            let filteredMovies = allMovies.filter { $0.titleEn?.lowercased().contains(query.lowercased()) == true }
-            if filteredMovies.isEmpty {
-                self.errorState.send(.notFound)
-            } else {
+            if query.isEmpty {
                 self.errorState.send(.none)
+                self.isSearching = false
+                self.searchQueryList.send([])
+            } else {
+                self.isSearching = true
+                let allMovies = self.movieList.value
+                let filteredMovies = allMovies.filter { $0.titleEn?.lowercased().contains(query.lowercased()) == true }
+                if filteredMovies.isEmpty {
+                    self.errorState.send(.notFound)
+                } else {
+                    self.errorState.send(.none)
+                }
+                self.searchQueryList.send(filteredMovies)
             }
-            self.searchQueryList.send(filteredMovies)
         }
     }
 

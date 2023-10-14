@@ -20,10 +20,17 @@ class DateFormatterUtility {
         timeZone: Constants.TimeZoneDate)
         -> String
     {
+        let regexPattern = " 00:00:00$"
         self.internalFormatter.timeZone = TimeZone(abbreviation: timeZone.rawValue)
         self.internalFormatter.dateFormat = serverDateFormat
-        guard let date = internalFormatter.date(from: string) else { return "" }
-        return self.format(date: date, format: showDateFormat, sendServiceFormat: timeZone == .utc)
+        if let regex = try? NSRegularExpression(pattern: regexPattern) {
+            let range = NSRange(location: 0, length: string.utf16.count)
+            let modifiedString = regex.stringByReplacingMatches(in: string, options: [], range: range, withTemplate: "")
+            guard let date = internalFormatter.date(from: modifiedString) else { return "" }
+            return self.format(date: date, format: showDateFormat, sendServiceFormat: timeZone == .utc)
+        } else {
+            return ""
+        }
     }
 
     static func format(date: Date, format: String, sendServiceFormat: Bool = false) -> String {

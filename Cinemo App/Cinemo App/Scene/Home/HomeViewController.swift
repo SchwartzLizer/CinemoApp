@@ -64,6 +64,13 @@ class HomeViewController: UIViewController {
                 cell.viewModel = EmptyStateViewModel(type: .unknown)
                 cell.selectionStyle = .none
                 return cell
+            case .favouriteEmpty:
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: EmptyStateTableViewCell.identifier,
+                    for: indexPath) as! EmptyStateTableViewCell
+                cell.viewModel = EmptyStateViewModel(type: .favouriteEmpty)
+                cell.selectionStyle = .none
+                return cell
             case .none:
                 let cell = tableView.dequeueReusableCell(
                     withIdentifier: MovieTableViewCell.identifier,
@@ -182,8 +189,8 @@ extension HomeViewController: Action,MovieTableViewCellDelegate {
 
     @objc
     func didSelectFavorite() {
-//        let favoriteVC = FavoriteViewController()
-//        self.navigationController?.pushViewController(favoriteVC, animated: true)
+        let favoriteVC = FavouriteViewController(viewModel: FavouriteViewModel())
+        self.navigationController?.pushViewController(favoriteVC, animated: true)
     }
 
     func searchBar(_: UISearchBar, textDidChange searchText: String) {
