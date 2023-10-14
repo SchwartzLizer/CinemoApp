@@ -186,7 +186,7 @@ extension MovieTableViewCell: ApplyTheme {
         } else {
             self.favouriteImageView.image = UIImage(systemName: "heart")
         }
-        self.favouriteImageView.tintColor = .systemPink
+        self.favouriteImageView.tintColor = self.theme.heartColor
     }
 
 }

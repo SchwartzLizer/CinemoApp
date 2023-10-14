@@ -52,13 +52,13 @@ extension DetailViewModel:Logic {
             UserDefault().removeFavorite(data: self.data)
             AlertUtility.showAlert(
                 title: Constants.Keys.appName.localized(),
-                message: Constants.Keys.removeFavourite.localized())
+                message: (self.data.titleEn ?? "") + "\n" + Constants.Keys.removeFavourite.localized())
         } else {
             self.isAlreadyFav = true
             UserDefault().addFavorite(data: self.data)
             AlertUtility.showAlert(
                 title: Constants.Keys.appName.localized(),
-                message: Constants.Keys.addFavourite.localized())
+                message: (self.data.titleEn ?? "") + "\n" + Constants.Keys.addFavourite.localized())
         }
         self.onUpdated?()
     }

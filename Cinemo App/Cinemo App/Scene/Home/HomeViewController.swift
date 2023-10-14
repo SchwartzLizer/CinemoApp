@@ -228,9 +228,14 @@ extension HomeViewController: ApplyTheme {
             style: .plain,
             target: self,
             action: #selector(self.didSelectFavorite))
-        favoriteButton.tintColor = .systemPink
+        favoriteButton.tintColor = theme.heartColor
         self.navigationItem.rightBarButtonItem = favoriteButton
         self.title = Constants.Keys.appName.localized()
+
+        let appearance = UINavigationBarAppearance()
+        appearance.backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.tintColor = .black
     }
 
 }

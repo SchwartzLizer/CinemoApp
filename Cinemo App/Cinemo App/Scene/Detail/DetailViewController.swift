@@ -114,8 +114,8 @@ extension DetailViewController: ApplyTheme {
                 font: self.font.favoriteButtonFont,
                 color: .white,
                 round: self.addFavouriteButton.frame.height / 2.00,
-                backgroundColor: UIColor().hex("f31e8b"),
-                borderColor: UIColor().hex("f31e8b"))
+                backgroundColor: theme.heartColor,
+                borderColor: theme.heartColor)
         }
     }
 
@@ -131,7 +131,7 @@ extension DetailViewController: ApplyTheme {
     }
 
     func applyThemeNavigationBar() {
-        self.title = "Cinemo"
+        self.title = Constants.Keys.appName.localized()
     }
 
 }
