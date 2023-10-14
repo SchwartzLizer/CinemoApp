@@ -273,9 +273,9 @@
 		16EB1EEE2AD94E7200137223 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				16EB1EC32AD94C8D00137223 /* Home.storyboard */,
 				16EB1EF12AD94EB300137223 /* HomeViewController.swift */,
 				16EB1EF32AD94ED500137223 /* HomeViewModel.swift */,
+				16EB1EC32AD94C8D00137223 /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";

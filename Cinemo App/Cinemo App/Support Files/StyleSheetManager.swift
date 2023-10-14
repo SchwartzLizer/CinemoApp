@@ -54,5 +54,12 @@ enum StyleSheetManager {
         }
     }
 
+    static func applyTheme(theme: Theme) {
+        // First persist the selected theme using NSUserDefaults.
+        UserDefaults.standard.setValue(theme.rawValue, forKey: SelectedThemeKey)
+        UserDefaults.standard.synchronize()
+        // You get your current (selected) theme and apply the main color to the tintColor property of your application’s window.
+    }
+
 }
 
