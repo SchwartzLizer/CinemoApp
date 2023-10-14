@@ -19,6 +19,9 @@ class HomeViewController: UIViewController {
         self.setupUI()
         self.applyTheme()
         self.onInitialized()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            LoadingManager.shared.showLoading()
+        }
     }
 
     deinit {

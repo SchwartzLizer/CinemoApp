@@ -90,10 +90,10 @@ class LoadingView: UIView {
     private func setupView() {
         self.animationView = LottieAnimationView()
         self.animationView?.animation = LottieAnimation.named(Constants.Lottie.loading)
-        self.animationView?.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        self.animationView?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200)
         self.animationView?.center = center
         self.animationView?.loopMode = .loop
-        self.animationView?.animationSpeed = 0.5
+        self.animationView?.animationSpeed = 1.0
 
         if let animationView = animationView {
             addSubview(animationView)
