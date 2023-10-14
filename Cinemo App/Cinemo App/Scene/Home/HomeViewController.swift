@@ -16,9 +16,17 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        applyTheme()
+        self.setupUI()
+        self.applyTheme()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.viewModel = HomeViewModel()
         self.onInitialized()
+    }
+
+    deinit {
+        self.viewModel.cancellables.forEach { $0.cancel() }
     }
 
     // MARK: Internal
@@ -32,7 +40,7 @@ class HomeViewController: UIViewController {
         case main
     }
 
-    private var viewModel = HomeViewModel()
+    private var viewModel: HomeViewModel!
     private let refreshControl = UIRefreshControl()
 
     private lazy var dataSource: UITableViewDiffableDataSource<TableSection, Movie>? = {
@@ -183,6 +191,10 @@ extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBar
 // MARK: Action, MovieTableViewCellDelegate
 
 extension HomeViewController: Action,MovieTableViewCellDelegate {
+    func didSelectFavourite() {
+        // No Need to do
+    }
+    
     func didSelectViewMore(data: Movie) {
         let detailVC = DetailViewController(viewModel: DetailViewModel(data: data))
         self.navigationController?.pushViewController(detailVC, animated: true)
@@ -200,9 +212,10 @@ extension HomeViewController: Action,MovieTableViewCellDelegate {
 
     @objc
     func handleRefresh() {
-        self.viewModel.refresh()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.viewModel.refresh()
+        }
     }
-
 
 }
 

@@ -12,6 +12,7 @@ import Lottie
 
 protocol MovieTableViewCellDelegate: AnyObject {
     func didSelectViewMore(data: Movie)
+    func didSelectFavourite()
 }
 
 // MARK: - MovieTableViewCell
@@ -23,6 +24,23 @@ class MovieTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.applyTheme()
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        // Reset UILabels
+        self.genreLabel.text = nil
+        self.dateLabel.text = nil
+        self.nameLabel.text = nil
+
+        // Reset UIImageViews
+        self.favouriteImageView.image = nil
+        self.imageMovie.image = nil
+
+        // Reset Lottie Animation
+        self.favouriteLottieAnimationView.stop()
+        self.favouriteLottieAnimationView.isHidden = true
     }
 
     // MARK: Public
@@ -43,7 +61,6 @@ class MovieTableViewCell: UITableViewCell {
             onUpdated()
         }
     }
-
 
     // MARK: Internal
 
@@ -106,7 +123,7 @@ extension MovieTableViewCell: Action {
             self.favouriteLottieAnimationView.isHidden = true
             self.favouriteLottieAnimationView.stop()
         }
-
+        self.delegate?.didSelectFavourite()
     }
 }
 

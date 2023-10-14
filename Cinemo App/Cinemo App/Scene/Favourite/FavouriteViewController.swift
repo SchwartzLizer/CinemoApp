@@ -30,6 +30,10 @@ class FavouriteViewController: UIViewController {
         self.onInitialized()
     }
 
+    deinit {
+        self.viewModel.cancellables.forEach { $0.cancel() }
+    }
+
     // MARK: Public
 
 
@@ -204,6 +208,10 @@ extension FavouriteViewController: UserInterfaceSetup,UITableViewDelegate,UISear
 // MARK: Action, MovieTableViewCellDelegate
 
 extension FavouriteViewController: Action,MovieTableViewCellDelegate {
+    func didSelectFavourite() {
+        self.viewModel.getFavourite()
+    }
+    
     func didSelectViewMore(data: Movie) {
         let detailVC = DetailViewController(viewModel: DetailViewModel(data: data))
         self.navigationController?.pushViewController(detailVC, animated: true)
