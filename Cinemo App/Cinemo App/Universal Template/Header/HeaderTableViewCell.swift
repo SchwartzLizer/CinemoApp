@@ -47,7 +47,7 @@ extension HeaderTableViewCell: ApplyTheme {
   }
 
   func applyLabel() {
-    self.headerLabel.applyTheme(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
+    self.headerLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
   }
 
   func applyBackground() {

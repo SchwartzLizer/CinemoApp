@@ -8,7 +8,7 @@
 import UIKit
 
 extension UILabel {
-    func applyTheme(font: UIFont,color: UIColor,fitWidth: Bool = false) {
+    func applyThemeLabel(font: UIFont,color: UIColor,fitWidth: Bool = false) {
         self.text = self.text
         self.font = font
         self.textColor = color

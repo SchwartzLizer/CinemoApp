@@ -93,14 +93,14 @@ extension DetailViewController: ApplyTheme {
     }
 
     func applyThemeLabel() {
-        self.genreLabel.applyTheme(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
-        self.nameLabel.applyTheme(font: .systemFont(ofSize: 14), color: self.themeManager.titleTextColor)
-        self.descriptionLabel.applyTheme(font: .systemFont(ofSize: 14), color: self.themeManager.titleTextColor)
+        self.genreLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
+        self.nameLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.titleTextColor)
+        self.descriptionLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.titleTextColor)
     }
 
     func applyThemeButton() {
         if self.viewModel.isAlreadyFav == true {
-            self.addFavouriteButton.applyTheme(
+            self.addFavouriteButton.applyThemeButton(
                 text: "Remove favourite",
                 font: .systemFont(ofSize: 14),
                 color: .white,
@@ -108,7 +108,7 @@ extension DetailViewController: ApplyTheme {
                 backgroundColor: UIColor().hex("Ff0000"),
                 borderColor: UIColor().hex("Ff0000"))
         } else {
-            self.addFavouriteButton.applyTheme(
+            self.addFavouriteButton.applyThemeButton(
                 text: "Add to favourite",
                 font: .systemFont(ofSize: 14),
                 color: .white,

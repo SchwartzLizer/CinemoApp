@@ -9,7 +9,7 @@ import UIKit
 
 extension UIButton {
 
-  func applyTheme(
+  func applyThemeButton(
     text: String,
     font Font: UIFont,
     color Color: UIColor,

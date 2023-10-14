@@ -90,7 +90,7 @@ extension EmptyStateTableViewCell:ApplyTheme {
     }
 
     func applyThemeLabel() {
-        self.descriptionLabel.applyTheme(font: .systemFont(ofSize: 14), color: self.themeManager.titleTextColor)
+        self.descriptionLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.titleTextColor)
     }
 
 }

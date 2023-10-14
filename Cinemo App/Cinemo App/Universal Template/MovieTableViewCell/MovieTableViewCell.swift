@@ -101,15 +101,15 @@ extension MovieTableViewCell: ApplyTheme {
   // MARK: Private
 
   private func applyThemeLabel() {
-    self.nameLabel.applyTheme(font: .boldSystemFont(ofSize: 16), color: self.themeManager.titleTextColor)
-    self.genreLabel.applyTheme(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
-    self.dateLabel.applyTheme(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
+    self.nameLabel.applyThemeLabel(font: .boldSystemFont(ofSize: 16), color: self.themeManager.titleTextColor)
+    self.genreLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
+    self.dateLabel.applyThemeLabel(font: .systemFont(ofSize: 14), color: self.themeManager.subtitleTextColor)
   }
 
   private func applyThemeButton() {
-    self.seeMoreButton.applyTheme(
+    self.seeMoreButton.applyThemeButton(
       text: Constants.Keys.seeMoreBTN.localized(),
-      font: .systemFont(ofSize: 14),
+      font: UIFont(name: Constants.Font.medium, size: 14)!,
       color: self.themeManager.buttonTextColor,
       round: Constants.Radius.cornerRadiusCard)
   }
