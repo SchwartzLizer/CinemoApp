@@ -34,6 +34,17 @@
         }
       }
     },
+    "Not_Found" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The search was unsuccessful. Perhaps a movie is not accessible or has not yet been released."
+          }
+        }
+      }
+    },
     "seeMoreBTN" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -41,6 +52,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "See More >"
+          }
+        }
+      }
+    },
+    "Service_Not_Found" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The service is not available; please wait a moment and try again."
+          }
+        }
+      }
+    },
+    "Unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unaware of the error Remove the casing."
           }
         }
       }

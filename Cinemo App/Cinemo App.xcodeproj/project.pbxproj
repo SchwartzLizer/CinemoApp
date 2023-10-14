@@ -64,6 +64,7 @@
 		16EB1F702ADAA5BE00137223 /* ErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */; };
 		16EB1F772ADAAAAC00137223 /* EmptyStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F752ADAAAAC00137223 /* EmptyStateTableViewCell.swift */; };
 		16EB1F782ADAAAAC00137223 /* EmptyStateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F762ADAAAAC00137223 /* EmptyStateTableViewCell.xib */; };
+		16EB1F7A2ADAB40D00137223 /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F792ADAB40C00137223 /* Loading.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorState.swift; sourceTree = "<group>"; };
 		16EB1F752ADAAAAC00137223 /* EmptyStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateTableViewCell.swift; sourceTree = "<group>"; };
 		16EB1F762ADAAAAC00137223 /* EmptyStateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateTableViewCell.xib; sourceTree = "<group>"; };
+		16EB1F792ADAB40C00137223 /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				16EB1F672ADA9E6700137223 /* NotFound.json */,
+				16EB1F792ADAB40C00137223 /* Loading.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			files = (
 				16EB1ECA2AD94C8E00137223 /* LaunchScreen.storyboard in Resources */,
 				16EB1F4C2ADA794000137223 /* HeaderTableViewCell.xib in Resources */,
+				16EB1F7A2ADAB40D00137223 /* Loading.json in Resources */,
 				16EB1F212AD9633C00137223 /* MovieTableViewCell.xib in Resources */,
 				16EB1F5C2ADA92D400137223 /* FavouriteViewController.xib in Resources */,
 				16EB1F682ADA9E6700137223 /* NotFound.json in Resources */,
