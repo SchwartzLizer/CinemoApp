@@ -41,13 +41,37 @@ class HomeViewController: UIViewController {
         let dataSource = UITableViewDiffableDataSource<TableSection, Movie>(
             tableView: tableView)
         { tableView, indexPath, data -> UITableViewCell? in
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: MovieTableViewCell.identifier,
-                for: indexPath) as! MovieTableViewCell
-            cell.viewModel = MovieTableViewModel(movies: data)
-            cell.selectionStyle = .none
-            cell.delegate = self
-            return cell
+            switch self.viewModel.errorState.value {
+            case .notFound:
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: EmptyStateTableViewCell.identifier,
+                    for: indexPath) as! EmptyStateTableViewCell
+                cell.viewModel = EmptyStateViewModel(type: .notFound)
+                cell.selectionStyle = .none
+                return cell
+            case .serviceNotFound:
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: EmptyStateTableViewCell.identifier,
+                    for: indexPath) as! EmptyStateTableViewCell
+                cell.viewModel = EmptyStateViewModel(type: .serviceNotFound)
+                cell.selectionStyle = .none
+                return cell
+            case .unknown:
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: EmptyStateTableViewCell.identifier,
+                    for: indexPath) as! EmptyStateTableViewCell
+                cell.viewModel = EmptyStateViewModel(type: .unknown)
+                cell.selectionStyle = .none
+                return cell
+            case .none:
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: MovieTableViewCell.identifier,
+                    for: indexPath) as! MovieTableViewCell
+                cell.viewModel = MovieTableViewModel(movies: data)
+                cell.selectionStyle = .none
+                cell.delegate = self
+                return cell
+            }
         }
         dataSource.defaultRowAnimation = .fade
         return dataSource
@@ -60,6 +84,9 @@ class HomeViewController: UIViewController {
             (
                 identifier: MovieTableViewCell.identifier,
                 nib: MovieTableViewCell.nib),
+            (
+                identifier: EmptyStateTableViewCell.identifier,
+                nib: EmptyStateTableViewCell.nib),
         ]
     }
 
@@ -77,10 +104,12 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: Updated {
     func onUpdated() {
-        Publishers.CombineLatest(self.viewModel.movieList, self.viewModel.searchQueryList)
-            .sink { [weak self] data, searchQuery in
+        Publishers.CombineLatest3(self.viewModel.movieList, self.viewModel.searchQueryList, self.viewModel.errorState)
+            .sink { [weak self] data, searchQuery, errorState in
                 guard let self = self else { return }
-                if searchQuery.isEmpty {
+                if errorState != .none {
+                    self.updateTableView(data: [Movie.placeholderError])
+                } else if searchQuery.isEmpty {
                     self.updateTableView(data: data)
                 } else {
                     self.updateTableView(data: searchQuery)
@@ -119,7 +148,6 @@ extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBar
         self.tableView.allowsSelection = false
         self.tableView.backgroundColor = .white
     }
-
 
     func setupSearchView() {
         self.searchView.delegate = self

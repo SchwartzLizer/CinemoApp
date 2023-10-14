@@ -8,16 +8,12 @@
 import UIKit
 import Lottie
 
-// MARK: - EmptyStateTableViewCell
-
 class EmptyStateTableViewCell: UITableViewCell {
-
-    // MARK: Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
-        applyTheme()
+        self.setupUI()
+        self.applyTheme()
     }
 
     // MARK: Public
@@ -32,6 +28,7 @@ class EmptyStateTableViewCell: UITableViewCell {
 
     // MARK: Internal
 
+    @IBOutlet weak var constraintsHeight: NSLayoutConstraint!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var lottieAnimationView: LottieAnimationView!
 
@@ -55,8 +52,9 @@ extension EmptyStateTableViewCell: Updated {
     }
 
     func updateLabel() {
-        guard let viewModel = viewModel else { return }
-        self.descriptionLabel.text = self.viewModel?.type.rawValue.localized()
+        guard let viewModel = self.viewModel else { return }
+        self.descriptionLabel.text = viewModel.type.rawValue.localized()
+        self.constraintsHeight.constant = UIScreen.main.bounds.height * 0.7
     }
 
 

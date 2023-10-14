@@ -11,40 +11,70 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="215" id="KGk-i7-Jjw" customClass="EmptyStateTableViewCell" customModule="Cinemo_App" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="324" id="KGk-i7-Jjw" customClass="EmptyStateTableViewCell" customModule="Cinemo_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="324"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="324"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C24-Ea-JWo" customClass="LottieAnimationView" customModule="I">
-                        <rect key="frame" x="40" y="5" width="240" height="179.66666666666666"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jv1-Iq-TZA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="shg-IU-MU2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0t-qQ-EOM" customClass="LottieAnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="231"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0Q-qR-H4u">
+                                        <rect key="frame" x="0.0" y="231" width="320" height="99"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KU4-pl-9me">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="KU4-pl-9me" secondAttribute="trailing" id="0VE-DT-Xph"/>
+                                            <constraint firstItem="KU4-pl-9me" firstAttribute="top" secondItem="O0Q-qR-H4u" secondAttribute="top" id="G0T-jd-GJa"/>
+                                            <constraint firstItem="KU4-pl-9me" firstAttribute="leading" secondItem="O0Q-qR-H4u" secondAttribute="leading" id="wel-3W-gbY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="O0Q-qR-H4u" firstAttribute="height" secondItem="shg-IU-MU2" secondAttribute="height" multiplier="0.3" id="nRK-Z0-VV7"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="shg-IU-MU2" secondAttribute="bottom" id="Pdc-9L-UhG"/>
+                            <constraint firstItem="shg-IU-MU2" firstAttribute="top" secondItem="jv1-Iq-TZA" secondAttribute="top" id="UTb-r4-fE6"/>
+                            <constraint firstAttribute="height" constant="330" id="qQ9-pR-kRG"/>
+                            <constraint firstItem="shg-IU-MU2" firstAttribute="leading" secondItem="jv1-Iq-TZA" secondAttribute="leading" id="qrJ-J7-U3Q"/>
+                            <constraint firstAttribute="trailing" secondItem="shg-IU-MU2" secondAttribute="trailing" id="xN1-oY-ZEo"/>
+                        </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0A-r4-R8s">
-                        <rect key="frame" x="40" y="189.66666666666666" width="240" height="20.333333333333343"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="S0A-r4-R8s" secondAttribute="trailing" constant="40" id="BlO-r7-AAe"/>
-                    <constraint firstItem="S0A-r4-R8s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="ELc-9T-Mbr"/>
-                    <constraint firstAttribute="bottom" secondItem="S0A-r4-R8s" secondAttribute="bottom" constant="5" id="EMd-mp-d8u"/>
-                    <constraint firstItem="C24-Ea-JWo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="XLD-DB-e76"/>
-                    <constraint firstAttribute="trailing" secondItem="C24-Ea-JWo" secondAttribute="trailing" constant="40" id="u87-vl-sIm"/>
-                    <constraint firstItem="S0A-r4-R8s" firstAttribute="top" secondItem="C24-Ea-JWo" secondAttribute="bottom" constant="5" id="vnw-bo-v6o"/>
-                    <constraint firstItem="C24-Ea-JWo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="zu6-Lg-dya"/>
+                    <constraint firstItem="jv1-Iq-TZA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="AWd-Vh-yFf"/>
+                    <constraint firstAttribute="trailing" secondItem="jv1-Iq-TZA" secondAttribute="trailing" id="Mca-8E-sy4"/>
+                    <constraint firstAttribute="bottom" secondItem="jv1-Iq-TZA" secondAttribute="bottom" id="vo5-cU-Ihr"/>
+                    <constraint firstItem="jv1-Iq-TZA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ylB-83-iC9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="descriptionLabel" destination="S0A-r4-R8s" id="yrw-cN-OZJ"/>
-                <outlet property="lottieAnimationView" destination="C24-Ea-JWo" id="tuR-fR-3Dx"/>
+                <outlet property="constraintsHeight" destination="qQ9-pR-kRG" id="B1x-CS-xmg"/>
+                <outlet property="descriptionLabel" destination="KU4-pl-9me" id="tPO-Yt-NRN"/>
+                <outlet property="lottieAnimationView" destination="Y0t-qQ-EOM" id="3aX-GT-fAQ"/>
             </connections>
-            <point key="canvasLocation" x="-35.114503816793892" y="79.929577464788736"/>
+            <point key="canvasLocation" x="48.854961832061065" y="119.01408450704226"/>
         </tableViewCell>
     </objects>
     <resources>

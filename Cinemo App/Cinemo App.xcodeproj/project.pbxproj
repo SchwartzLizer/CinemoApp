@@ -57,12 +57,13 @@
 		16EB1F582ADA901600137223 /* StyleSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F572ADA901600137223 /* StyleSheets.swift */; };
 		16EB1F5B2ADA92D400137223 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F592ADA92D400137223 /* FavouriteViewController.swift */; };
 		16EB1F5C2ADA92D400137223 /* FavouriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F5A2ADA92D400137223 /* FavouriteViewController.xib */; };
-		16EB1F602ADA9B8200137223 /* EmptyStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F5E2ADA9B8200137223 /* EmptyStateTableViewCell.swift */; };
-		16EB1F612ADA9B8200137223 /* EmptyStateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F5F2ADA9B8200137223 /* EmptyStateTableViewCell.xib */; };
 		16EB1F642ADA9E4D00137223 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 16EB1F632ADA9E4D00137223 /* Lottie */; };
 		16EB1F682ADA9E6700137223 /* NotFound.json in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F672ADA9E6700137223 /* NotFound.json */; };
 		16EB1F6C2ADAA0A200137223 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F6B2ADAA0A200137223 /* AssetsManager.swift */; };
 		16EB1F6E2ADAA12B00137223 /* EmptyStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F6D2ADAA12B00137223 /* EmptyStateViewModel.swift */; };
+		16EB1F702ADAA5BE00137223 /* ErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */; };
+		16EB1F772ADAAAAC00137223 /* EmptyStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F752ADAAAAC00137223 /* EmptyStateTableViewCell.swift */; };
+		16EB1F782ADAAAAC00137223 /* EmptyStateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F762ADAAAAC00137223 /* EmptyStateTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,11 +129,12 @@
 		16EB1F572ADA901600137223 /* StyleSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSheets.swift; sourceTree = "<group>"; };
 		16EB1F592ADA92D400137223 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		16EB1F5A2ADA92D400137223 /* FavouriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteViewController.xib; sourceTree = "<group>"; };
-		16EB1F5E2ADA9B8200137223 /* EmptyStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateTableViewCell.swift; sourceTree = "<group>"; };
-		16EB1F5F2ADA9B8200137223 /* EmptyStateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateTableViewCell.xib; sourceTree = "<group>"; };
 		16EB1F672ADA9E6700137223 /* NotFound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NotFound.json; sourceTree = "<group>"; };
 		16EB1F6B2ADAA0A200137223 /* AssetsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
 		16EB1F6D2ADAA12B00137223 /* EmptyStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateViewModel.swift; sourceTree = "<group>"; };
+		16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorState.swift; sourceTree = "<group>"; };
+		16EB1F752ADAAAAC00137223 /* EmptyStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateTableViewCell.swift; sourceTree = "<group>"; };
+		16EB1F762ADAAAAC00137223 /* EmptyStateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 				16EB1F532ADA8C9000137223 /* UserDefault.swift */,
 				16EB1F552ADA8F7A00137223 /* AlertUtility.swift */,
 				16EB1F572ADA901600137223 /* StyleSheets.swift */,
+				16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -337,9 +340,9 @@
 		16EB1F5D2ADA9B6000137223 /* EmptyStateTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				16EB1F5E2ADA9B8200137223 /* EmptyStateTableViewCell.swift */,
 				16EB1F6D2ADAA12B00137223 /* EmptyStateViewModel.swift */,
-				16EB1F5F2ADA9B8200137223 /* EmptyStateTableViewCell.xib */,
+				16EB1F752ADAAAAC00137223 /* EmptyStateTableViewCell.swift */,
+				16EB1F762ADAAAAC00137223 /* EmptyStateTableViewCell.xib */,
 			);
 			path = EmptyStateTableViewCell;
 			sourceTree = "<group>";
@@ -475,12 +478,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				16EB1ECA2AD94C8E00137223 /* LaunchScreen.storyboard in Resources */,
-				16EB1F612ADA9B8200137223 /* EmptyStateTableViewCell.xib in Resources */,
 				16EB1F4C2ADA794000137223 /* HeaderTableViewCell.xib in Resources */,
 				16EB1F212AD9633C00137223 /* MovieTableViewCell.xib in Resources */,
 				16EB1F5C2ADA92D400137223 /* FavouriteViewController.xib in Resources */,
 				16EB1F682ADA9E6700137223 /* NotFound.json in Resources */,
 				16EB1F502ADA7C7400137223 /* DetailViewController.xib in Resources */,
+				16EB1F782ADAAAAC00137223 /* EmptyStateTableViewCell.xib in Resources */,
 				16EB1F3B2AD970B900137223 /* Localizable.xcstrings in Resources */,
 				16EB1F002AD94FF100137223 /* Configuration.plist in Resources */,
 				16EB1EC72AD94C8E00137223 /* Assets.xcassets in Resources */,
@@ -514,12 +517,12 @@
 				16EB1F0A2AD9547500137223 /* Logger.swift in Sources */,
 				16EB1F4F2ADA7C7400137223 /* DetailViewController.swift in Sources */,
 				16EB1F582ADA901600137223 /* StyleSheets.swift in Sources */,
+				16EB1F772ADAAAAC00137223 /* EmptyStateTableViewCell.swift in Sources */,
 				16EB1F5B2ADA92D400137223 /* FavouriteViewController.swift in Sources */,
 				16EB1F202AD9633C00137223 /* MovieTableViewCell.swift in Sources */,
 				16EB1F432AD98E3B00137223 /* DateFormatter.swift in Sources */,
 				16EB1F3D2AD9711900137223 /* String+Extension.swift in Sources */,
 				16EB1F6C2ADAA0A200137223 /* AssetsManager.swift in Sources */,
-				16EB1F602ADA9B8200137223 /* EmptyStateTableViewCell.swift in Sources */,
 				16EB1F292AD9689500137223 /* MovieTableViewModel.swift in Sources */,
 				16EB1F522ADA80AA00137223 /* DetailViewModel.swift in Sources */,
 				16EB1EFF2AD94FF100137223 /* RouterEnumeration.swift in Sources */,
@@ -532,6 +535,7 @@
 				16EB1F082AD9535000137223 /* MovieListModel.swift in Sources */,
 				16EB1F562ADA8F7A00137223 /* AlertUtility.swift in Sources */,
 				16EB1F372AD96F3E00137223 /* Kingfisher+Extension.swift in Sources */,
+				16EB1F702ADAA5BE00137223 /* ErrorState.swift in Sources */,
 				16EB1EF42AD94ED500137223 /* HomeViewModel.swift in Sources */,
 				16EB1F542ADA8C9000137223 /* UserDefault.swift in Sources */,
 				16EB1F012AD94FF100137223 /* Network.swift in Sources */,
