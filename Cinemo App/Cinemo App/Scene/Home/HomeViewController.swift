@@ -75,7 +75,7 @@ class HomeViewController: UIViewController {
                 let cell = tableView.dequeueReusableCell(
                     withIdentifier: MovieTableViewCell.identifier,
                     for: indexPath) as! MovieTableViewCell
-                cell.viewModel = MovieTableViewModel(movies: data)
+                cell.viewModel = MovieTableViewModel(data: data)
                 cell.selectionStyle = .none
                 cell.delegate = self
                 return cell

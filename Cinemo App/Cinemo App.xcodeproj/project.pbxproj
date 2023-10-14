@@ -83,6 +83,7 @@
 		16EB1FC32ADAD86100137223 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1FB52ADAD86100137223 /* Rubik-MediumItalic.ttf */; };
 		16EB1FC42ADAD86100137223 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1FB62ADAD86100137223 /* Rubik-SemiBold.ttf */; };
 		16EB1FC52ADAD86100137223 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1FB72ADAD86100137223 /* Rubik-Light.ttf */; };
+		16EB1FC72ADAE74800137223 /* Like.json in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1FC62ADAE74800137223 /* Like.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		16EB1FB52ADAD86100137223 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		16EB1FB62ADAD86100137223 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
 		16EB1FB72ADAD86100137223 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		16EB1FC62ADAE74800137223 /* Like.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Like.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +407,7 @@
 				16EB1F7F2ADAC5BE00137223 /* NoFavourite.json */,
 				16EB1F672ADA9E6700137223 /* NotFound.json */,
 				16EB1F792ADAB40C00137223 /* Loading.json */,
+				16EB1FC62ADAE74800137223 /* Like.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				16EB1F502ADA7C7400137223 /* DetailViewController.xib in Resources */,
 				16EB1F782ADAAAAC00137223 /* EmptyStateTableViewCell.xib in Resources */,
 				16EB1F3B2AD970B900137223 /* Localizable.xcstrings in Resources */,
+				16EB1FC72ADAE74800137223 /* Like.json in Resources */,
 				16EB1FBC2ADAD86100137223 /* Rubik-ExtraBoldItalic.ttf in Resources */,
 				16EB1F002AD94FF100137223 /* Configuration.plist in Resources */,
 				16EB1FBD2ADAD86100137223 /* Rubik-SemiBoldItalic.ttf in Resources */,

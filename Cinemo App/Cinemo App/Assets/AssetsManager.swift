@@ -12,5 +12,6 @@ extension Constants {
         static let notFound = "NotFound"
         static let loading = "Loading"
         static let noFavourite = "NoFavourite"
+        static let like = "Like"
     }
 }
