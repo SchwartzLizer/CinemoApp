@@ -18,7 +18,6 @@ extension Constants {
 // MARK: - Theme
 
 enum Theme: Int {
-
     case LightMode, DarkMode
 
     // MARK: Internal
@@ -31,116 +30,65 @@ enum Theme: Int {
     }
 
     var backgroundColor: UIColor {
-        switch self {
-        case .LightMode:
-            return .white
-        case .DarkMode:
-            return .black
-        }
+        self.dynamicColor(light: .white, dark: .black)
     }
 
     var titleTextColor: UIColor {
-        switch self {
-        case .LightMode:
-            return .black
-        case .DarkMode:
-            return .white
-        }
+        self.dynamicColor(light: .black, dark: .white)
     }
 
     var subtitleTextColor: UIColor {
-        switch self {
-        case .LightMode:
-            return .lightGray
-        case .DarkMode:
-            return .lightGray
-        }
+        self.dynamicColor(light: .lightGray, dark: .lightGray)
     }
 
     var buttonTextColor: UIColor {
-        switch self {
-        case .LightMode:
-            return .lightGray
-        case .DarkMode:
-            return .lightGray
-        }
+        self.dynamicColor(light: .lightGray, dark: .lightGray)
     }
 
     var cardBackgroundColor: UIColor {
-        switch self {
-        case .LightMode:
-            return UIColor().hex("#f8f8f8")
-        case .DarkMode:
-            return UIColor().hex("#636363")
-        }
+        self.dynamicColor(light: UIColor().hex("#f8f8f8"), dark: UIColor().hex("#636363"))
     }
 
     var heartColor: UIColor {
-        switch self {
-        case .LightMode:
-            return UIColor().hex("#ff3144")
-        case .DarkMode:
-            return UIColor().hex("#ff3144")
-        }
+        self.dynamicColor(light: UIColor().hex("#ff3144"), dark: UIColor().hex("#ff3144"))
     }
 
     var moonColor: UIColor {
-        switch self {
-        case .LightMode:
-            return .black
-        case .DarkMode:
-            return .white
-        }
+        self.dynamicColor(light: .black, dark: .white)
     }
 
-
     var tableViewBackgroundColor: UIColor {
-        switch self {
-        case .LightMode:
-            return .white
-        case .DarkMode:
-            return .black
-        }
+        self.dynamicColor(light: .white, dark: .black)
     }
 
     var labelHeaderTableViewColor: UIColor {
-        switch self {
-        case .LightMode:
-            return .lightGray
-        case .DarkMode:
-            return .white
-        }
+        self.dynamicColor(light: .lightGray, dark: .white)
     }
 
     var navigationBarTintColor: UIColor {
-        switch self {
-        case .LightMode:
-            return .black
-        case .DarkMode:
-            return .white
-        }
+        self.dynamicColor(light: .black, dark: .white)
     }
 
     var navigationBarTitleColor: UIColor {
-        switch self {
-        case .LightMode:
-            return .black
-        case .DarkMode:
-            return .white
-        }
+        self.dynamicColor(light: .black, dark: .white)
     }
 
     var navigationBarBackgroundColor: UIColor {
-        switch self {
-        case .LightMode:
-            return .white
-        case .DarkMode:
-            return .black
-        }
+        self.dynamicColor(light: .white, dark: .black)
     }
 
+    // MARK: Private
 
+    private func dynamicColor(light: UIColor, dark: UIColor) -> UIColor {
+        return UIColor { traitCollection in
+            switch traitCollection.userInterfaceStyle {
+            case .dark: return dark
+            default: return light
+            }
+        }
+    }
 }
+
 
 // MARK: - Fonts
 

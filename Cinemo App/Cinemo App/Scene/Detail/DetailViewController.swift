@@ -107,8 +107,8 @@ extension DetailViewController: ApplyTheme {
                 font: self.font.favoriteButtonFont,
                 color: .white,
                 round: self.addFavouriteButton.frame.height / 2.00,
-                backgroundColor: UIColor().hex("Ff0000"),
-                borderColor: UIColor().hex("Ff0000"))
+                backgroundColor: theme.heartColor,
+                borderColor: theme.heartColor)
         } else {
             self.addFavouriteButton.applyThemeButton(
                 text: Constants.Keys.addFavBTN.localized(),
@@ -123,7 +123,6 @@ extension DetailViewController: ApplyTheme {
     func applyThemeImageView() {
         self.imageMovie.applyTheme(
             background: self.theme.cardBackgroundColor,
-            border: self.theme.cardBackgroundColor,
             radius: Constants.Radius.cornerRadiusCard)
     }
 

@@ -8,9 +8,9 @@
 import UIKit
 
 extension UIView {
-  func applyTheme(background: UIColor, border: UIColor, radius: CGFloat) {
+  func applyTheme(background: UIColor, radius: CGFloat) {
     self.backgroundColor = background
-    self.layer.borderColor = border.cgColor
+    self.layer.borderColor = UIColor.clear.cgColor
     self.layer.borderWidth = 1
     self.layer.cornerRadius = radius
   }

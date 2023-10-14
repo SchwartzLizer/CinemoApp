@@ -161,14 +161,12 @@ extension MovieTableViewCell: ApplyTheme {
     private func applyThemeCardView() {
         self.cardView.applyTheme(
             background: self.theme.cardBackgroundColor,
-            border: self.theme.cardBackgroundColor,
             radius: Constants.Radius.cornerRadiusCard)
     }
 
     private func applyThemeImageView() {
         self.imageMovie.applyTheme(
             background: self.theme.cardBackgroundColor,
-            border: self.theme.cardBackgroundColor,
             radius: Constants.Radius.cornerRadiusCard)
     }
 
