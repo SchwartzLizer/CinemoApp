@@ -24,13 +24,14 @@ class MovieTableViewModel: ViewModel {
 
     // MARK: Private
 
-    public var isAlreadyFav = false
+    public var isAlreadyFav: Bool = false
     var onUpdated: (() -> Void)?
 
 }
 
 extension MovieTableViewModel: ProcessDataSource {
     func checkFavourite() {
+        isAlreadyFav = false
         UserDefault().getFavorite().forEach { movie in
             if movie.id == self.data.id {
                 self.isAlreadyFav = true

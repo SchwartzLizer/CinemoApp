@@ -34,6 +34,7 @@ final class DetailViewModel: ViewModel {
 
 extension DetailViewModel: ProcessDataSource {
     func checkFavourite() {
+        self.isAlreadyFav = false
         UserDefault().getFavorite().forEach { movie in
             if movie.id == self.data.id {
                 self.isAlreadyFav = true

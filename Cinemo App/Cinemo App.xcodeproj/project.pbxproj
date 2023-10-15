@@ -12,7 +12,6 @@
 		16EB1EC52AD94C8D00137223 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EC32AD94C8D00137223 /* Home.storyboard */; };
 		16EB1EC72AD94C8E00137223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EC62AD94C8E00137223 /* Assets.xcassets */; };
 		16EB1ECA2AD94C8E00137223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EC82AD94C8E00137223 /* LaunchScreen.storyboard */; };
-		16EB1ED52AD94C8E00137223 /* Cinemo_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1ED42AD94C8E00137223 /* Cinemo_AppTests.swift */; };
 		16EB1EDF2AD94C8E00137223 /* Cinemo_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EDE2AD94C8E00137223 /* Cinemo_AppUITests.swift */; };
 		16EB1EE12AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EE02AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift */; };
 		16EB1EF22AD94EB300137223 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF12AD94EB300137223 /* HomeViewController.swift */; };
@@ -32,8 +31,6 @@
 		16EB1F162AD95E9A00137223 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EFE2AD94FF100137223 /* Configuration.swift */; };
 		16EB1F172AD95E9A00137223 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EFC2AD94FF100137223 /* Network.swift */; };
 		16EB1F182AD95E9A00137223 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EFB2AD94FF100137223 /* Configuration.plist */; };
-		16EB1F192AD9600B00137223 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF62AD94F7300137223 /* Protocol.swift */; };
-		16EB1F1A2AD9600B00137223 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F092AD9547500137223 /* Logger.swift */; };
 		16EB1F202AD9633C00137223 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F1E2AD9633C00137223 /* MovieTableViewCell.swift */; };
 		16EB1F212AD9633C00137223 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1F1F2AD9633C00137223 /* MovieTableViewCell.xib */; };
 		16EB1F242AD964AC00137223 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 16EB1F232AD964AC00137223 /* Kingfisher */; };
@@ -86,6 +83,34 @@
 		16EB1FC72ADAE74800137223 /* Like.json in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1FC62ADAE74800137223 /* Like.json */; };
 		16EB1FC92ADAFDDC00137223 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FC82ADAFDDC00137223 /* HapticFeedback.swift */; };
 		16EB1FCB2ADB0B7B00137223 /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FCA2ADB0B7B00137223 /* AppUtility.swift */; };
+		16EB1FCD2ADB18A400137223 /* HomeViewModelUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FCC2ADB18A400137223 /* HomeViewModelUnitTests.swift */; };
+		16EB1FCE2ADB803600137223 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF32AD94ED500137223 /* HomeViewModel.swift */; };
+		16EB1FCF2ADB805700137223 /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F7D2ADAC31A00137223 /* FavouriteViewModel.swift */; };
+		16EB1FD02ADB805700137223 /* EmptyStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F6D2ADAA12B00137223 /* EmptyStateViewModel.swift */; };
+		16EB1FD12ADB805700137223 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F512ADA80AA00137223 /* DetailViewModel.swift */; };
+		16EB1FD22ADB805700137223 /* MovieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F282AD9689500137223 /* MovieTableViewModel.swift */; };
+		16EB1FE02ADB806E00137223 /* LabelPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F2F2AD96CAC00137223 /* LabelPreset.swift */; };
+		16EB1FE12ADB806E00137223 /* ViewPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F3E2AD9717C00137223 /* ViewPreset.swift */; };
+		16EB1FE22ADB806E00137223 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F092AD9547500137223 /* Logger.swift */; };
+		16EB1FE32ADB806E00137223 /* ButtonPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F332AD96E0800137223 /* ButtonPreset.swift */; };
+		16EB1FE42ADB806E00137223 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F382AD9706A00137223 /* Constants.swift */; };
+		16EB1FE52ADB806E00137223 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF62AD94F7300137223 /* Protocol.swift */; };
+		16EB1FE62ADB806E00137223 /* AlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F552ADA8F7A00137223 /* AlertUtility.swift */; };
+		16EB1FE72ADB806E00137223 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F532ADA8C9000137223 /* UserDefault.swift */; };
+		16EB1FE82ADB806E00137223 /* StyleSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F2A2AD96A6C00137223 /* StyleSheetManager.swift */; };
+		16EB1FE92ADB806E00137223 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F422AD98E3B00137223 /* DateFormatter.swift */; };
+		16EB1FEA2ADB806E00137223 /* StyleSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F572ADA901600137223 /* StyleSheets.swift */; };
+		16EB1FEB2ADB806E00137223 /* ErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */; };
+		16EB1FEC2ADB806E00137223 /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F7B2ADAB4AF00137223 /* LoadingManager.swift */; };
+		16EB1FED2ADB806E00137223 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FC82ADAFDDC00137223 /* HapticFeedback.swift */; };
+		16EB1FEE2ADB806E00137223 /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FCA2ADB0B7B00137223 /* AppUtility.swift */; };
+		16EB1FEF2ADB807700137223 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F852ADAD46200137223 /* FontManager.swift */; };
+		16EB1FF02ADB807700137223 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F6B2ADAA0A200137223 /* AssetsManager.swift */; };
+		16EB1FF12ADB807D00137223 /* Kingfisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F362AD96F3E00137223 /* Kingfisher+Extension.swift */; };
+		16EB1FF22ADB807D00137223 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F3C2AD9711900137223 /* String+Extension.swift */; };
+		16EB1FF42ADB878300137223 /* DetailViewModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FF32ADB878300137223 /* DetailViewModelUnitTest.swift */; };
+		16EB1FF82ADB917400137223 /* FavouriteViewModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FF72ADB917400137223 /* FavouriteViewModelUnitTest.swift */; };
+		16EB1FFA2ADB93C900137223 /* MovieTableViewModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FF92ADB93C900137223 /* MovieTableViewModelUnitTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +139,6 @@
 		16EB1EC92AD94C8E00137223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16EB1ECB2AD94C8E00137223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16EB1ED02AD94C8E00137223 /* Cinemo AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cinemo AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		16EB1ED42AD94C8E00137223 /* Cinemo_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinemo_AppTests.swift; sourceTree = "<group>"; };
 		16EB1EDA2AD94C8E00137223 /* Cinemo AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cinemo AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EB1EDE2AD94C8E00137223 /* Cinemo_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinemo_AppUITests.swift; sourceTree = "<group>"; };
 		16EB1EE02AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinemo_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -179,6 +203,10 @@
 		16EB1FC62ADAE74800137223 /* Like.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Like.json; sourceTree = "<group>"; };
 		16EB1FC82ADAFDDC00137223 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		16EB1FCA2ADB0B7B00137223 /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
+		16EB1FCC2ADB18A400137223 /* HomeViewModelUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelUnitTests.swift; sourceTree = "<group>"; };
+		16EB1FF32ADB878300137223 /* DetailViewModelUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelUnitTest.swift; sourceTree = "<group>"; };
+		16EB1FF72ADB917400137223 /* FavouriteViewModelUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModelUnitTest.swift; sourceTree = "<group>"; };
+		16EB1FF92ADB93C900137223 /* MovieTableViewModelUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewModelUnitTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,8 +275,11 @@
 		16EB1ED32AD94C8E00137223 /* Cinemo AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				16EB1ED42AD94C8E00137223 /* Cinemo_AppTests.swift */,
 				16EB1F0B2AD95E4800137223 /* NetworkTest.swift */,
+				16EB1FCC2ADB18A400137223 /* HomeViewModelUnitTests.swift */,
+				16EB1FF32ADB878300137223 /* DetailViewModelUnitTest.swift */,
+				16EB1FF72ADB917400137223 /* FavouriteViewModelUnitTest.swift */,
+				16EB1FF92ADB93C900137223 /* MovieTableViewModelUnitTest.swift */,
 			);
 			path = "Cinemo AppTests";
 			sourceTree = "<group>";
@@ -648,15 +679,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16EB1FEE2ADB806E00137223 /* AppUtility.swift in Sources */,
 				16EB1F162AD95E9A00137223 /* Configuration.swift in Sources */,
+				16EB1FCE2ADB803600137223 /* HomeViewModel.swift in Sources */,
 				16EB1F142AD95E9A00137223 /* MovieListModel.swift in Sources */,
+				16EB1FD02ADB805700137223 /* EmptyStateViewModel.swift in Sources */,
+				16EB1FE12ADB806E00137223 /* ViewPreset.swift in Sources */,
 				16EB1F132AD95E9A00137223 /* RouterEnumeration.swift in Sources */,
-				16EB1F192AD9600B00137223 /* Protocol.swift in Sources */,
-				16EB1F1A2AD9600B00137223 /* Logger.swift in Sources */,
 				16EB1F152AD95E9A00137223 /* Router.swift in Sources */,
+				16EB1FF02ADB807700137223 /* AssetsManager.swift in Sources */,
+				16EB1FE92ADB806E00137223 /* DateFormatter.swift in Sources */,
+				16EB1FE22ADB806E00137223 /* Logger.swift in Sources */,
+				16EB1FEF2ADB807700137223 /* FontManager.swift in Sources */,
+				16EB1FEA2ADB806E00137223 /* StyleSheets.swift in Sources */,
+				16EB1FE72ADB806E00137223 /* UserDefault.swift in Sources */,
+				16EB1FF82ADB917400137223 /* FavouriteViewModelUnitTest.swift in Sources */,
+				16EB1FCD2ADB18A400137223 /* HomeViewModelUnitTests.swift in Sources */,
+				16EB1FE62ADB806E00137223 /* AlertUtility.swift in Sources */,
+				16EB1FF22ADB807D00137223 /* String+Extension.swift in Sources */,
+				16EB1FE52ADB806E00137223 /* Protocol.swift in Sources */,
+				16EB1FF12ADB807D00137223 /* Kingfisher+Extension.swift in Sources */,
+				16EB1FE02ADB806E00137223 /* LabelPreset.swift in Sources */,
+				16EB1FEB2ADB806E00137223 /* ErrorState.swift in Sources */,
+				16EB1FFA2ADB93C900137223 /* MovieTableViewModelUnitTest.swift in Sources */,
+				16EB1FE82ADB806E00137223 /* StyleSheetManager.swift in Sources */,
+				16EB1FD12ADB805700137223 /* DetailViewModel.swift in Sources */,
+				16EB1FF42ADB878300137223 /* DetailViewModelUnitTest.swift in Sources */,
+				16EB1FEC2ADB806E00137223 /* LoadingManager.swift in Sources */,
+				16EB1FCF2ADB805700137223 /* FavouriteViewModel.swift in Sources */,
+				16EB1FD22ADB805700137223 /* MovieTableViewModel.swift in Sources */,
 				16EB1F0C2AD95E4800137223 /* NetworkTest.swift in Sources */,
 				16EB1F172AD95E9A00137223 /* Network.swift in Sources */,
-				16EB1ED52AD94C8E00137223 /* Cinemo_AppTests.swift in Sources */,
+				16EB1FED2ADB806E00137223 /* HapticFeedback.swift in Sources */,
+				16EB1FE32ADB806E00137223 /* ButtonPreset.swift in Sources */,
+				16EB1FE42ADB806E00137223 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
