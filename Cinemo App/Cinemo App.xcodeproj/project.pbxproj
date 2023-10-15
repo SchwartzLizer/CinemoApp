@@ -112,7 +112,6 @@
 		16EB1FFC2ADB97FB00137223 /* HomeSceneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FFB2ADB97FB00137223 /* HomeSceneUITests.swift */; };
 		16EB1FFE2ADB99CF00137223 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FFD2ADB99CF00137223 /* AccessibilityIdentifier.swift */; };
 		16EB1FFF2ADB9A6400137223 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FFD2ADB99CF00137223 /* AccessibilityIdentifier.swift */; };
-		16EB201B2ADB9A7800137223 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FFD2ADB99CF00137223 /* AccessibilityIdentifier.swift */; };
 		16EB20282ADB9AE500137223 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F382AD9706A00137223 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -265,6 +264,7 @@
 				16EB1F652ADA9E5600137223 /* Assets */,
 				16EB1F352AD96EB400137223 /* Extension */,
 				16EB1EF92AD94FF100137223 /* Router */,
+				16EB20292ADC45E300137223 /* StyleSheet */,
 				16EB1EF52AD94F6400137223 /* Support Files */,
 				16EB1F1C2AD962A100137223 /* Universal Template */,
 				16EB1EED2AD94E4C00137223 /* Scene */,
@@ -338,24 +338,13 @@
 		16EB1EF52AD94F6400137223 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				16EB1ECB2AD94C8E00137223 /* Info.plist */,
-				16EB1EF62AD94F7300137223 /* Protocol.swift */,
-				16EB1F092AD9547500137223 /* Logger.swift */,
-				16EB1F2A2AD96A6C00137223 /* StyleSheetManager.swift */,
-				16EB1F572ADA901600137223 /* StyleSheets.swift */,
-				16EB1F2F2AD96CAC00137223 /* LabelPreset.swift */,
-				16EB1F332AD96E0800137223 /* ButtonPreset.swift */,
-				16EB1F382AD9706A00137223 /* Constants.swift */,
-				16EB1F3A2AD970B900137223 /* Localizable.xcstrings */,
-				16EB1F3E2AD9717C00137223 /* ViewPreset.swift */,
-				16EB1F422AD98E3B00137223 /* DateFormatter.swift */,
-				16EB1F532ADA8C9000137223 /* UserDefault.swift */,
-				16EB1F552ADA8F7A00137223 /* AlertUtility.swift */,
-				16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */,
-				16EB1F7B2ADAB4AF00137223 /* LoadingManager.swift */,
-				16EB1FC82ADAFDDC00137223 /* HapticFeedback.swift */,
 				16EB1FCA2ADB0B7B00137223 /* AppUtility.swift */,
-				16EB1FFD2ADB99CF00137223 /* AccessibilityIdentifier.swift */,
+				16EB1F382AD9706A00137223 /* Constants.swift */,
+				16EB1F6F2ADAA5BE00137223 /* ErrorState.swift */,
+				16EB1ECB2AD94C8E00137223 /* Info.plist */,
+				16EB1F3A2AD970B900137223 /* Localizable.xcstrings */,
+				16EB1F532ADA8C9000137223 /* UserDefault.swift */,
+				16EB202A2ADC470000137223 /* Utility */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -471,6 +460,32 @@
 				16EB1FAF2ADAD86100137223 /* Rubik-SemiBoldItalic.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		16EB20292ADC45E300137223 /* StyleSheet */ = {
+			isa = PBXGroup;
+			children = (
+				16EB1F572ADA901600137223 /* StyleSheets.swift */,
+				16EB1F2A2AD96A6C00137223 /* StyleSheetManager.swift */,
+				16EB1F2F2AD96CAC00137223 /* LabelPreset.swift */,
+				16EB1F332AD96E0800137223 /* ButtonPreset.swift */,
+				16EB1F3E2AD9717C00137223 /* ViewPreset.swift */,
+			);
+			path = StyleSheet;
+			sourceTree = "<group>";
+		};
+		16EB202A2ADC470000137223 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				16EB1EF62AD94F7300137223 /* Protocol.swift */,
+				16EB1F092AD9547500137223 /* Logger.swift */,
+				16EB1F422AD98E3B00137223 /* DateFormatter.swift */,
+				16EB1F552ADA8F7A00137223 /* AlertUtility.swift */,
+				16EB1FC82ADAFDDC00137223 /* HapticFeedback.swift */,
+				16EB1F7B2ADAB4AF00137223 /* LoadingManager.swift */,
+				16EB1FFD2ADB99CF00137223 /* AccessibilityIdentifier.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -726,7 +741,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				16EB20282ADB9AE500137223 /* Constants.swift in Sources */,
-				16EB201B2ADB9A7800137223 /* AccessibilityIdentifier.swift in Sources */,
 				16EB1FFC2ADB97FB00137223 /* HomeSceneUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

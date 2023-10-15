@@ -193,9 +193,9 @@ extension MovieTableViewCell: ApplyTheme {
     private func applyThemeFavouriteImageView() {
         guard let fav = self.viewModel?.isAlreadyFav else { return }
         if fav {
-            self.favouriteImageView.image = UIImage(systemName: "heart.fill")
+          self.favouriteImageView.image = UIImage(systemName: Constants.SystemImage.heartFill)
         } else {
-            self.favouriteImageView.image = UIImage(systemName: "heart")
+          self.favouriteImageView.image = UIImage(systemName: Constants.SystemImage.heart)
         }
         self.favouriteImageView.tintColor = self.theme.heartColor
     }

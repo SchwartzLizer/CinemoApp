@@ -14,4 +14,10 @@ extension Constants {
         static let noFavourite = "NoFavourite"
         static let like = "Like"
     }
+
+  enum SystemImage {
+    static let heartFill = "heart.fill"
+    static let heart = "heart"
+    static let moonFill = "moon.fill"
+  }
 }

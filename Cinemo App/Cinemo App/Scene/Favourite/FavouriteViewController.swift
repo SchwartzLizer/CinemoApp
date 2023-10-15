@@ -196,12 +196,12 @@ extension FavouriteViewController: UserInterfaceSetup,UITableViewDelegate,UISear
     func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(
             withIdentifier: HeaderTableViewCell.identifier) as! HeaderTableViewCell
-        headerView.headerLabel.text = "My Favourite"
+        headerView.headerLabel.text = Constants.Keys.favouriteHeaderTBC.localized()
         return headerView
     }
 
     func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
-        return 30
+      return Height.header.rawValue
     }
 
 }

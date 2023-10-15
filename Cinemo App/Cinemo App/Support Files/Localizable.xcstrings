@@ -45,6 +45,28 @@
         }
       }
     },
+    "favouriteHeaderTBC" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Favourite"
+          }
+        }
+      }
+    },
+    "homeHeaderTBC" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Movie Finder"
+          }
+        }
+      }
+    },
     "homeSearchBarPlaceHolder" : {
       "extractionState" : "manual",
       "localizations" : {
