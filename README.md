@@ -28,22 +28,16 @@
 </ol>
 
  <h2>📸 Screenshots</h2>
-    <table>
-        <tr>
-            <th>DynamicLight</th>
-            <th>Like</th>
-            <th>Search</th>
-            <th>Deatil</th>
-            <th>Favourite</th>
-        </tr>
-        <tr>
-              <td><a href="https://imgur.com/jqJJztO"><img src="https://i.imgur.com/jqJJztOh.gif" title="source: imgur.com" alt="DynamicLight" width="150" height="300" /></a></td> 
-        <td><a href="https://imgur.com/0cIqEUA"><img src="https://i.imgur.com/0cIqEUAh.gif" title="source: imgur.com" alt="Like" width="150" height="300" /></a></td>
-        <td><a href="https://imgur.com/I6QyKee"><img src="https://i.imgur.com/I6QyKeeh.gif" title="source: imgur.com" alt="Search" width="150" height="300" /></a></td>
-        <td><a href="https://imgur.com/9CT4nct"><img src="https://i.imgur.com/9CT4ncth.gif" title="source: imgur.com" alt="Detail" width="150" height="300" /></a></td>
-        <td><a href="https://imgur.com/EoznMIX"><img src="https://i.imgur.com/EoznMIXh.gif" title="source: imgur.com" alt="Favourite" width="150" height="300" /></a></td>
-        </tr>
-    </table>
+ 
+https://github.com/SchwartzLizer/CinemoApp/assets/54163797/3930554b-431e-4b3f-8ae9-f048644e13c9
+
+https://github.com/SchwartzLizer/CinemoApp/assets/54163797/dd5cd611-3f56-4f12-8d7d-2c3d458d36b6
+
+https://github.com/SchwartzLizer/CinemoApp/assets/54163797/8157c8fb-f427-4736-a4b4-39bb23781bd5
+
+https://github.com/SchwartzLizer/CinemoApp/assets/54163797/db88e4f2-b270-4639-92cb-2a1a0db23c85
+
+https://github.com/SchwartzLizer/CinemoApp/assets/54163797/426ce02c-c0a9-4fa9-943b-7b1280ad8b29
 
 <h2>🤝 Contribute</h2>
 Feel free to fork this repository, create a branch, add your changes, and submit a pull request. We appreciate your contributions!
@@ -53,3 +47,5 @@ This project is licensed under the MIT License. See LICENSE.md for more details.
 
 <h2>📩 Contact</h2>
 For any inquiries or feedback, please reach out to us at your_email@gmail.com!
+
+
