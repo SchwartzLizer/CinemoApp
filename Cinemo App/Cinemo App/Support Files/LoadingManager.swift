@@ -89,6 +89,7 @@ class LoadingView: UIView {
 
     private func setupView() {
         self.animationView = LottieAnimationView()
+        self.animationView?.accessibilityIdentifier = Constants.AccessibilityIdentifier.loadingView
         self.animationView?.animation = LottieAnimation.named(Constants.Lottie.loading)
         self.animationView?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200)
         self.animationView?.center = center

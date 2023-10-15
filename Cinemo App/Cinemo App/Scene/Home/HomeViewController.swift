@@ -181,6 +181,7 @@ extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBar
         self.tableView.backgroundColor = self.theme.tableViewBackgroundColor
         self.refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         self.tableView.refreshControl = self.refreshControl
+        self.tableView.accessibilityIdentifier = Constants.AccessibilityIdentifier.HomeViewController.homeTableView
     }
 
     func setupSearchView() {
@@ -188,6 +189,7 @@ extension HomeViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBar
         self.searchView.placeholder = Constants.Keys.homeSearchBarPlaceHolder.localized()
         self.searchView.searchBarStyle = .minimal
         self.searchView.searchTextField.font = self.font.searchFont
+        self.searchView.accessibilityIdentifier = Constants.AccessibilityIdentifier.HomeViewController.homeSearchBar
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {

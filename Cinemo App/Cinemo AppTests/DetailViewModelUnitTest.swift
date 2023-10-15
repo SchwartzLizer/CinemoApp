@@ -10,19 +10,12 @@ import XCTest
 
 class DetailViewModelTests: XCTestCase {
 
-    // Mock movie data
     var mockMovie: Movie!
-
-    // ViewModel instance
     var viewModel: DetailViewModel!
 
     override func setUp() {
         super.setUp()
-
-        // Setting up mock data. Use the necessary initializer or static method to create your Movie instance
         self.mockMovie = Movie.mockUp1
-
-        // Initialize ViewModel with mock data
         self.viewModel = DetailViewModel(data: self.mockMovie)
     }
 
@@ -33,8 +26,6 @@ class DetailViewModelTests: XCTestCase {
     }
 
     func testCheckFavorite() {
-        // Assuming UserDefault().getFavorite() works and gets movies from UserDefaults
-        // If "Mock Movie" is a favorite, isAlreadyFav should be true
         UserDefault().addFavorite(data: self.mockMovie)
         self.viewModel.checkFavourite()
         XCTAssertEqual(self.viewModel.isAlreadyFav, true, "Expected isAlreadyFav to be true for mock movie.")

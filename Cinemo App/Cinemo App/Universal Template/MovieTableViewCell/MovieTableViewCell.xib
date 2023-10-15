@@ -133,6 +133,7 @@
             <connections>
                 <outlet property="cardView" destination="WCV-Oy-RzE" id="Gam-iI-ae7"/>
                 <outlet property="dateLabel" destination="CDc-4W-uvh" id="nmJ-nZ-DYo"/>
+                <outlet property="favouriteButton" destination="Alg-0T-i0M" id="lAL-a6-vw0"/>
                 <outlet property="favouriteImageView" destination="LL7-sV-c2g" id="9E4-fK-yeB"/>
                 <outlet property="favouriteLottieAnimationView" destination="DoG-M4-VUF" id="Ako-Li-c6O"/>
                 <outlet property="genreLabel" destination="JZW-er-ukE" id="L7I-aw-zKY"/>

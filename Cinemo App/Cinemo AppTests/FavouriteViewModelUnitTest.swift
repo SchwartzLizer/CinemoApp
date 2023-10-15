@@ -27,21 +27,20 @@ final class FavouriteViewModelUnitTest: XCTestCase {
     }
 
     func testEmptyStates() {
-        var movie = Movie.mockUp1
+        let movie = Movie.mockUp1
         UserDefault().removeFavorite(data: movie)
         self.viewModel.getFavourite()
         XCTAssertEqual(self.viewModel.errorState.value, .favouriteEmpty)
     }
 
     func testNonEmptyState() {
-        var movie = Movie.mockUp1
+        let movie = Movie.mockUp1
         UserDefault().addFavorite(data: movie)
         self.viewModel.getFavourite()
         XCTAssertEqual(self.viewModel.errorState.value, .none)
     }
 
     func testSearchWithNonEmptyQuery() {
-        // Mock a set of movies
         let movie1 = Movie.mockUp1
         let movie2 = Movie.mockUp2
         self.viewModel.movieList.send([movie1, movie2])
@@ -53,7 +52,6 @@ final class FavouriteViewModelUnitTest: XCTestCase {
     }
 
     func testSearchWithExactQuery() {
-        // Mock a set of movies
         let movie1 = Movie.mockUp1
         let movie2 = Movie.mockUp2
         self.viewModel.movieList.send([movie1, movie2])

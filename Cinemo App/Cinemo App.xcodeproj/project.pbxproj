@@ -12,8 +12,6 @@
 		16EB1EC52AD94C8D00137223 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EC32AD94C8D00137223 /* Home.storyboard */; };
 		16EB1EC72AD94C8E00137223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EC62AD94C8E00137223 /* Assets.xcassets */; };
 		16EB1ECA2AD94C8E00137223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EB1EC82AD94C8E00137223 /* LaunchScreen.storyboard */; };
-		16EB1EDF2AD94C8E00137223 /* Cinemo_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EDE2AD94C8E00137223 /* Cinemo_AppUITests.swift */; };
-		16EB1EE12AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EE02AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift */; };
 		16EB1EF22AD94EB300137223 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF12AD94EB300137223 /* HomeViewController.swift */; };
 		16EB1EF42AD94ED500137223 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF32AD94ED500137223 /* HomeViewModel.swift */; };
 		16EB1EF72AD94F7300137223 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1EF62AD94F7300137223 /* Protocol.swift */; };
@@ -111,6 +109,11 @@
 		16EB1FF42ADB878300137223 /* DetailViewModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FF32ADB878300137223 /* DetailViewModelUnitTest.swift */; };
 		16EB1FF82ADB917400137223 /* FavouriteViewModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FF72ADB917400137223 /* FavouriteViewModelUnitTest.swift */; };
 		16EB1FFA2ADB93C900137223 /* MovieTableViewModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FF92ADB93C900137223 /* MovieTableViewModelUnitTest.swift */; };
+		16EB1FFC2ADB97FB00137223 /* HomeSceneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FFB2ADB97FB00137223 /* HomeSceneUITests.swift */; };
+		16EB1FFE2ADB99CF00137223 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FFD2ADB99CF00137223 /* AccessibilityIdentifier.swift */; };
+		16EB1FFF2ADB9A6400137223 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FFD2ADB99CF00137223 /* AccessibilityIdentifier.swift */; };
+		16EB201B2ADB9A7800137223 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1FFD2ADB99CF00137223 /* AccessibilityIdentifier.swift */; };
+		16EB20282ADB9AE500137223 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB1F382AD9706A00137223 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,8 +143,6 @@
 		16EB1ECB2AD94C8E00137223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16EB1ED02AD94C8E00137223 /* Cinemo AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cinemo AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EB1EDA2AD94C8E00137223 /* Cinemo AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cinemo AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		16EB1EDE2AD94C8E00137223 /* Cinemo_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinemo_AppUITests.swift; sourceTree = "<group>"; };
-		16EB1EE02AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinemo_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		16EB1EF12AD94EB300137223 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		16EB1EF32AD94ED500137223 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		16EB1EF62AD94F7300137223 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -207,6 +208,8 @@
 		16EB1FF32ADB878300137223 /* DetailViewModelUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelUnitTest.swift; sourceTree = "<group>"; };
 		16EB1FF72ADB917400137223 /* FavouriteViewModelUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModelUnitTest.swift; sourceTree = "<group>"; };
 		16EB1FF92ADB93C900137223 /* MovieTableViewModelUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewModelUnitTest.swift; sourceTree = "<group>"; };
+		16EB1FFB2ADB97FB00137223 /* HomeSceneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneUITests.swift; sourceTree = "<group>"; };
+		16EB1FFD2ADB99CF00137223 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,8 +290,7 @@
 		16EB1EDD2AD94C8E00137223 /* Cinemo AppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				16EB1EDE2AD94C8E00137223 /* Cinemo_AppUITests.swift */,
-				16EB1EE02AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift */,
+				16EB1FFB2ADB97FB00137223 /* HomeSceneUITests.swift */,
 			);
 			path = "Cinemo AppUITests";
 			sourceTree = "<group>";
@@ -353,6 +355,7 @@
 				16EB1F7B2ADAB4AF00137223 /* LoadingManager.swift */,
 				16EB1FC82ADAFDDC00137223 /* HapticFeedback.swift */,
 				16EB1FCA2ADB0B7B00137223 /* AppUtility.swift */,
+				16EB1FFD2ADB99CF00137223 /* AccessibilityIdentifier.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				16EB1F302AD96CAC00137223 /* LabelPreset.swift in Sources */,
 				16EB1EF72AD94F7300137223 /* Protocol.swift in Sources */,
 				16EB1F2B2AD96A6C00137223 /* StyleSheetManager.swift in Sources */,
+				16EB1FFE2ADB99CF00137223 /* AccessibilityIdentifier.swift in Sources */,
 				16EB1F392AD9706A00137223 /* Constants.swift in Sources */,
 				16EB1FCB2ADB0B7B00137223 /* AppUtility.swift in Sources */,
 			);
@@ -681,6 +685,7 @@
 			files = (
 				16EB1FEE2ADB806E00137223 /* AppUtility.swift in Sources */,
 				16EB1F162AD95E9A00137223 /* Configuration.swift in Sources */,
+				16EB1FFF2ADB9A6400137223 /* AccessibilityIdentifier.swift in Sources */,
 				16EB1FCE2ADB803600137223 /* HomeViewModel.swift in Sources */,
 				16EB1F142AD95E9A00137223 /* MovieListModel.swift in Sources */,
 				16EB1FD02ADB805700137223 /* EmptyStateViewModel.swift in Sources */,
@@ -720,8 +725,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16EB1EDF2AD94C8E00137223 /* Cinemo_AppUITests.swift in Sources */,
-				16EB1EE12AD94C8E00137223 /* Cinemo_AppUITestsLaunchTests.swift in Sources */,
+				16EB20282ADB9AE500137223 /* Constants.swift in Sources */,
+				16EB201B2ADB9A7800137223 /* AccessibilityIdentifier.swift in Sources */,
+				16EB1FFC2ADB97FB00137223 /* HomeSceneUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

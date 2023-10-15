@@ -72,7 +72,8 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var imageMovie: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var seeMoreButton: UIButton!
-
+    @IBOutlet weak var favouriteButton: UIButton!
+    
     // MARK: Private
 
     private lazy var theme = StyleSheetManager.currentTheme()
@@ -148,6 +149,10 @@ extension MovieTableViewCell: ApplyTheme {
         self.nameLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.titleTextColor)
         self.genreLabel.applyThemeLabel(font: self.font.subtitleFont, color: self.theme.subtitleTextColor)
         self.dateLabel.applyThemeLabel(font: self.font.subtitleFont, color: self.theme.subtitleTextColor)
+
+        self.nameLabel.accessibilityIdentifier = Constants.AccessibilityIdentifier.MovieTableViewCell.movieTitleLabel
+        self.genreLabel.accessibilityIdentifier = Constants.AccessibilityIdentifier.MovieTableViewCell.moviegenreLabel
+        self.dateLabel.accessibilityIdentifier = Constants.AccessibilityIdentifier.MovieTableViewCell.movieReleaseDateLabel
     }
 
     private func applyThemeButton() {
@@ -156,18 +161,24 @@ extension MovieTableViewCell: ApplyTheme {
             font: self.font.seeMoreButtonFont,
             color: self.theme.buttonTextColor,
             round: Constants.Radius.cornerRadiusCard)
+        self.seeMoreButton.accessibilityIdentifier = Constants.AccessibilityIdentifier.MovieTableViewCell.movieSeeMoreButton
+
+        favouriteButton.accessibilityIdentifier = Constants.AccessibilityIdentifier.MovieTableViewCell.movieFavoriteButton
+
     }
 
     private func applyThemeCardView() {
         self.cardView.applyTheme(
             background: self.theme.cardBackgroundColor,
             radius: Constants.Radius.cornerRadiusCard)
+        self.cardView.accessibilityIdentifier = Constants.AccessibilityIdentifier.MovieTableViewCell.movieCardView
     }
 
     private func applyThemeImageView() {
         self.imageMovie.applyTheme(
             background: self.theme.cardBackgroundColor,
             radius: Constants.Radius.cornerRadiusCard)
+        self.imageMovie.accessibilityIdentifier = Constants.AccessibilityIdentifier.MovieTableViewCell.movieImageView
     }
 
     private func applyThemeLottieAnimationView() {
@@ -175,6 +186,8 @@ extension MovieTableViewCell: ApplyTheme {
         self.favouriteLottieAnimationView.loopMode = .playOnce
         self.favouriteLottieAnimationView.animationSpeed = 1
         self.favouriteLottieAnimationView.isHidden = true
+        self.favouriteLottieAnimationView.accessibilityIdentifier = Constants.AccessibilityIdentifier.MovieTableViewCell.movieLottieFavoriteButton
+
     }
 
     private func applyThemeFavouriteImageView() {
