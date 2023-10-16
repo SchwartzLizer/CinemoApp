@@ -28,7 +28,7 @@
 <h2>🔧 Installation & Usage</h2>
 <ol>
 <li>Clone this repository:</li>
-<pre><code>git clone https://github.com/your_username/Cinemo.git</code></pre>
+<pre><code>git clone https://github.com/SchwartzLizer/Cinemo.git</code></pre>
 <li>Navigate to the project directory:</li>
 <li>Open in your favorite IDE and run the project!</li>
 </ol>
