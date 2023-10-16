@@ -97,7 +97,7 @@ extension MovieTableViewCell: Updated {
         applyThemeFavouriteImageView()
     }
 
-    func onUpdated() {
+    private func onUpdated() {
         self.viewModel?.onUpdated = { [weak self] in
             self?.applyThemeFavouriteImageView()
         }
@@ -109,13 +109,13 @@ extension MovieTableViewCell: Updated {
 
 extension MovieTableViewCell: Action {
     @IBAction
-    func didSelectViewMore(_: UIButton) {
+    internal func didSelectViewMore(_: UIButton) {
         guard let data = self.viewModel?.data else { return }
         self.delegate?.didSelectViewMore(data: data)
     }
 
     @IBAction
-    func didSelectFavourite(_: Any) {
+    internal func didSelectFavourite(_: Any) {
         self.viewModel?.updateFavourite()
         if self.viewModel?.isAlreadyFav == true {
             self.favouriteLottieAnimationView.isHidden = false

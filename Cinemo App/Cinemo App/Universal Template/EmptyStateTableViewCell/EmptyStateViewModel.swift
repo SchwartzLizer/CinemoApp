@@ -9,9 +9,13 @@ import Foundation
 
 final class EmptyStateViewModel: ViewModel {
 
+    // MARK: Lifecycle
+
     init(type: ErrorState) {
         self.type = type
     }
 
-    var type: ErrorState
+    // MARK: Public
+
+    public var type: ErrorState
 }

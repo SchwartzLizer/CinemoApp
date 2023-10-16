@@ -59,14 +59,19 @@ final class DetailViewController: UIViewController {
 // MARK: Updated
 
 extension DetailViewController: Updated {
-    func onInitialized() {
+
+    // MARK: Internal
+
+    internal func onInitialized() {
         self.nameLabel.text = self.viewModel.data.titleEn
         self.genreLabel.text = self.viewModel.data.genre
         self.descriptionLabel.text = self.viewModel.data.synopsisEn
         self.imageMovie.setImageFromURL(url: URL(string: self.viewModel.data.posterURL ?? ""))
     }
 
-    func onUpdated() {
+    // MARK: Private
+
+    private func onUpdated() {
         self.viewModel.onUpdated = { [weak self] in
             self?.applyThemeButton()
         }
@@ -77,7 +82,7 @@ extension DetailViewController: Updated {
 
 extension DetailViewController: Action {
     @IBAction
-    func didSelectButton(_: UIButton) {
+    private func didSelectButton(_: UIButton) {
         HapticFeedback.mediumImpact()
         HomeViewModelUpdater.shared.updateSubject.send(())
         self.viewModel.updateFavourite()
@@ -87,7 +92,10 @@ extension DetailViewController: Action {
 // MARK: ApplyTheme
 
 extension DetailViewController: ApplyTheme {
-    func applyTheme() {
+
+    // MARK: Internal
+
+    internal func applyTheme() {
         self.applyThemeLabel()
         self.applyThemeButton()
         self.applyThemeImageView()
@@ -95,43 +103,45 @@ extension DetailViewController: ApplyTheme {
         self.applyThemeNavigationBar()
     }
 
-    func applyThemeLabel() {
+    // MARK: Private
+
+    private func applyThemeLabel() {
         self.genreLabel.applyThemeLabel(font: self.font.subtitleFont, color: self.theme.subtitleTextColor)
         self.nameLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.titleTextColor)
         self.descriptionLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.titleTextColor)
     }
 
-    func applyThemeButton() {
+    private func applyThemeButton() {
         if self.viewModel.isAlreadyFav == true {
             self.addFavouriteButton.applyThemeButton(
                 text: Constants.Keys.removeFavBTN.localized(),
                 font: self.font.favoriteButtonFont,
                 color: .white,
                 round: self.addFavouriteButton.frame.height / 2.00,
-                backgroundColor: theme.heartColor,
-                borderColor: theme.heartColor)
+                backgroundColor: self.theme.heartColor,
+                borderColor: self.theme.heartColor)
         } else {
             self.addFavouriteButton.applyThemeButton(
                 text: Constants.Keys.addFavBTN.localized(),
                 font: self.font.favoriteButtonFont,
                 color: .white,
                 round: self.addFavouriteButton.frame.height / 2.00,
-                backgroundColor: theme.heartColor,
-                borderColor: theme.heartColor)
+                backgroundColor: self.theme.heartColor,
+                borderColor: self.theme.heartColor)
         }
     }
 
-    func applyThemeImageView() {
+    private func applyThemeImageView() {
         self.imageMovie.applyTheme(
             background: self.theme.cardBackgroundColor,
             radius: Constants.Radius.cornerRadiusCard)
     }
 
-    func applyThemeView() {
+    private func applyThemeView() {
         self.view.backgroundColor = self.theme.backgroundColor
     }
 
-    func applyThemeNavigationBar() {
+    private func applyThemeNavigationBar() {
         self.title = Constants.Keys.appName.localized()
     }
 
