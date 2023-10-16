@@ -45,7 +45,7 @@ class FavouriteViewModel: ViewModel {
 // MARK: RequestService
 
 extension FavouriteViewModel: RequestService {
-    func getFavourite() {
+    public func getFavourite() {
         if UserDefault().getFavorite().isEmpty {
             self.isNoFavorite = true
             self.errorState.send(.favouriteEmpty)
@@ -56,7 +56,7 @@ extension FavouriteViewModel: RequestService {
         }
     }
 
-    func refresh() {
+    public func refresh() {
         self.movieList.send([])
         self.searchQueryList.send([])
         self.getFavourite()
@@ -67,9 +67,7 @@ extension FavouriteViewModel: RequestService {
 
 extension FavouriteViewModel: ProcessDataSource {
 
-    // MARK: Internal
-
-    func processDataSource(data: [Movie]) {
+    private func processDataSource(data: [Movie]) {
         if self.isSearching {
             self.movieList.send(data)
             searchMovieList(query: self.savedSearchText)
@@ -77,8 +75,6 @@ extension FavouriteViewModel: ProcessDataSource {
             self.movieList.send(data)
         }
     }
-
-    // MARK: Private
 
     private func setupBindings() {
         self.searchText
@@ -95,7 +91,7 @@ extension FavouriteViewModel: ProcessDataSource {
 // MARK: Logic
 
 extension FavouriteViewModel: Logic {
-    func searchMovieList(query: String) {
+    private func searchMovieList(query: String) {
         if self.isNoFavorite {
             self.errorState.send(.favouriteEmpty)
         } else {

@@ -21,19 +21,18 @@ final class DetailViewModel: ViewModel {
     // MARK: Public
 
     public var isAlreadyFav = false
+    public var onUpdated: (() -> Void)?
 
     // MARK: Internal
 
     private(set) var data: Movie
-
-    var onUpdated: (() -> Void)?
 
 }
 
 // MARK: ProcessDataSource
 
 extension DetailViewModel: ProcessDataSource {
-    func checkFavourite() {
+    private func checkFavourite() {
         self.isAlreadyFav = false
         UserDefault().getFavorite().forEach { movie in
             if movie.id == self.data.id {
@@ -47,7 +46,7 @@ extension DetailViewModel: ProcessDataSource {
 // MARK: Logic
 
 extension DetailViewModel:Logic {
-    func updateFavourite() {
+    public func updateFavourite() {
         if self.isAlreadyFav == true {
             self.isAlreadyFav = false
             UserDefault().removeFavorite(data: self.data)

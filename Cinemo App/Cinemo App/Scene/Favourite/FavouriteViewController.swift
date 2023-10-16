@@ -36,7 +36,6 @@ class FavouriteViewController: UIViewController {
 
     // MARK: Public
 
-
     public static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
@@ -104,7 +103,6 @@ class FavouriteViewController: UIViewController {
                 cell.contentView.backgroundColor = self.theme.tableViewBackgroundColor
                 cell.delegate = self
                 return cell
-
             }
         }
         dataSource.defaultRowAnimation = .fade
@@ -138,7 +136,10 @@ class FavouriteViewController: UIViewController {
 // MARK: Updated
 
 extension FavouriteViewController: Updated {
-    func onInitialized() {
+
+    // MARK: Internal
+
+    internal func onInitialized() {
         Publishers.CombineLatest3(self.viewModel.movieList, self.viewModel.searchQueryList, self.viewModel.errorState)
             .sink { [weak self] data, searchQuery, errorState in
                 guard let self = self else { return }
@@ -153,7 +154,9 @@ extension FavouriteViewController: Updated {
             }.store(in: &self.viewModel.cancellables)
     }
 
-    func updateTableView(data: [Movie]) {
+    // MARK: Private
+
+    private func updateTableView(data: [Movie]) {
         var snapshot = NSDiffableDataSourceSnapshot<TableSection, Movie>()
         snapshot.appendSections([.main])
         snapshot.appendItems(data)
@@ -165,12 +168,28 @@ extension FavouriteViewController: Updated {
 // MARK: UserInterfaceSetup, UITableViewDelegate, UISearchBarDelegate
 
 extension FavouriteViewController: UserInterfaceSetup,UITableViewDelegate,UISearchBarDelegate {
-    func setupUI() {
+
+    // MARK: Internal
+
+    internal func setupUI() {
         self.setupSearchView()
         self.setupTableView()
     }
 
-    func setupTableView() {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: HeaderTableViewCell.identifier) as! HeaderTableViewCell
+        headerView.headerLabel.text = Constants.Keys.favouriteHeaderTBC.localized()
+        return headerView
+    }
+
+    func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
+        return Height.header.rawValue
+    }
+
+    // MARK: Private
+
+    private func setupTableView() {
         self.cellList.forEach { identifier, nib in
             self.tableView.register(nib, forCellReuseIdentifier: identifier)
         }
@@ -187,21 +206,10 @@ extension FavouriteViewController: UserInterfaceSetup,UITableViewDelegate,UISear
         self.tableView.refreshControl = self.refreshControl
     }
 
-    func setupSearchView() {
+    private func setupSearchView() {
         self.searchView.delegate = self
         self.searchView.placeholder = Constants.Keys.homeSearchBarPlaceHolder.localized()
         self.searchView.searchBarStyle = .minimal
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(
-            withIdentifier: HeaderTableViewCell.identifier) as! HeaderTableViewCell
-        headerView.headerLabel.text = Constants.Keys.favouriteHeaderTBC.localized()
-        return headerView
-    }
-
-    func tableView(_: UITableView, heightForHeaderInSection _: Int) -> CGFloat {
-      return Height.header.rawValue
     }
 
 }
@@ -209,25 +217,30 @@ extension FavouriteViewController: UserInterfaceSetup,UITableViewDelegate,UISear
 // MARK: Action, MovieTableViewCellDelegate
 
 extension FavouriteViewController: Action,MovieTableViewCellDelegate {
-    func didSelectFavourite() {
+
+    // MARK: Internal
+
+    internal func didSelectFavourite() {
         HapticFeedback.successNotification()
         HomeViewModelUpdater.shared.updateSubject.send(())
         self.viewModel.getFavourite()
     }
-    
-    func didSelectViewMore(data: Movie) {
+
+    internal func didSelectViewMore(data: Movie) {
         HapticFeedback.mediumImpact()
         let detailVC = DetailViewController(viewModel: DetailViewModel(data: data))
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 
-    func searchBar(_: UISearchBar, textDidChange searchText: String) {
+    internal func searchBar(_: UISearchBar, textDidChange searchText: String) {
         HapticFeedback.lightImpact()
         self.viewModel.searchText.send(searchText)
     }
 
+    // MARK: Private
+
     @objc
-    func handleRefresh() {
+    private func handleRefresh() {
         self.viewModel.refresh()
     }
 
@@ -237,11 +250,16 @@ extension FavouriteViewController: Action,MovieTableViewCellDelegate {
 // MARK: ApplyTheme
 
 extension FavouriteViewController: ApplyTheme {
-    func applyTheme() {
+
+    // MARK: Internal
+
+    internal func applyTheme() {
         self.applyThemeNavBar()
     }
 
-    func applyThemeNavBar() {
+    // MARK: Private
+
+    private func applyThemeNavBar() {
         self.title = Constants.Keys.appName.localized()
     }
 

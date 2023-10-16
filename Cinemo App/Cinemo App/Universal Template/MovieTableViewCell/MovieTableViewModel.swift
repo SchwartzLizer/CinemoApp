@@ -18,20 +18,19 @@ class MovieTableViewModel: ViewModel {
         checkFavourite()
     }
 
-    // MARK: Internal
+    // MARK: Public
 
-    let data: Movie
-
-    // MARK: Private
-
-    public var isAlreadyFav: Bool = false
-    var onUpdated: (() -> Void)?
+    public var isAlreadyFav = false
+    public let data: Movie
+    public var onUpdated: (() -> Void)?
 
 }
 
+// MARK: ProcessDataSource
+
 extension MovieTableViewModel: ProcessDataSource {
-    func checkFavourite() {
-        isAlreadyFav = false
+    private func checkFavourite() {
+        self.isAlreadyFav = false
         UserDefault().getFavorite().forEach { movie in
             if movie.id == self.data.id {
                 self.isAlreadyFav = true
@@ -43,7 +42,7 @@ extension MovieTableViewModel: ProcessDataSource {
 // MARK: Logic
 
 extension MovieTableViewModel: Logic {
-    func updateFavourite() {
+    public func updateFavourite() {
         if self.isAlreadyFav == true {
             self.isAlreadyFav = false
             UserDefault().removeFavorite(data: self.data)

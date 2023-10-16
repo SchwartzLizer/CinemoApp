@@ -8,7 +8,11 @@
 import UIKit
 import Lottie
 
+// MARK: - EmptyStateTableViewCell
+
 class EmptyStateTableViewCell: UITableViewCell {
+
+    // MARK: Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,11 +52,16 @@ class EmptyStateTableViewCell: UITableViewCell {
 // MARK: Updated
 
 extension EmptyStateTableViewCell: Updated {
-    func onInitialized() {
+
+    // MARK: Internal
+
+    internal func onInitialized() {
         self.updateLabel()
     }
 
-    func updateLabel() {
+    // MARK: Private
+
+    private func updateLabel() {
         guard let viewModel = self.viewModel else { return }
         self.descriptionLabel.text = viewModel.type.rawValue.localized()
         self.constraintsHeight.constant = UIScreen.main.bounds.height * 0.7
@@ -73,11 +82,16 @@ extension EmptyStateTableViewCell: Updated {
 // MARK: UserInterfaceSetup
 
 extension EmptyStateTableViewCell: UserInterfaceSetup {
-    func setupUI() {
+
+    // MARK: Internal
+
+    internal func setupUI() {
         self.setupLottie()
     }
 
-    func setupLottie() {
+    // MARK: Private
+
+    private func setupLottie() {
         self.lottieAnimationView.loopMode = .loop
     }
 
@@ -86,11 +100,16 @@ extension EmptyStateTableViewCell: UserInterfaceSetup {
 // MARK: ApplyTheme
 
 extension EmptyStateTableViewCell:ApplyTheme {
-    func applyTheme() {
+
+    // MARK: Internal
+
+    internal func applyTheme() {
         self.applyThemeLabel()
     }
 
-    func applyThemeLabel() {
+    // MARK: Private
+
+    private func applyThemeLabel() {
         self.descriptionLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.titleTextColor)
     }
 

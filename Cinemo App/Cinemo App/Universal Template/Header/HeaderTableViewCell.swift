@@ -11,28 +11,28 @@ import UIKit
 
 class HeaderTableViewCell: UITableViewHeaderFooterView {
 
-  // MARK: Lifecycle
+    // MARK: Lifecycle
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    self.applyTheme()
-  }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.applyTheme()
+    }
 
-  // MARK: Public
+    // MARK: Public
 
-  public static var nib: UINib {
-    return UINib(nibName: identifier, bundle: nil)
-  }
+    public static var nib: UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
 
-  public static var identifier: String {
-    return String(describing: self)
-  }
+    public static var identifier: String {
+        return String(describing: self)
+    }
 
-  // MARK: Internal
+    // MARK: Internal
 
-  @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var headerLabel: UILabel!
 
-  // MARK: Private
+    // MARK: Private
 
     private lazy var theme = StyleSheetManager.currentTheme()
     private lazy var font = StyleSheetManager.currentFontTheme()
@@ -42,17 +42,22 @@ class HeaderTableViewCell: UITableViewHeaderFooterView {
 // MARK: ApplyTheme
 
 extension HeaderTableViewCell: ApplyTheme {
-  func applyTheme() {
-    self.applyLabel()
-    self.applyBackground()
-  }
 
-  func applyLabel() {
-      self.headerLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.labelHeaderTableViewColor)
-  }
+    // MARK: Internal
 
-  func applyBackground() {
-      self.contentView.backgroundColor = self.theme.tableViewBackgroundColor
-  }
+    internal func applyTheme() {
+        self.applyLabel()
+        self.applyBackground()
+    }
+
+    // MARK: Private
+
+    private func applyLabel() {
+        self.headerLabel.applyThemeLabel(font: self.font.titleFont, color: self.theme.labelHeaderTableViewColor)
+    }
+
+    private func applyBackground() {
+        self.contentView.backgroundColor = self.theme.tableViewBackgroundColor
+    }
 
 }
