@@ -19,6 +19,12 @@
 <li>🔧 UITest</li>
 </ul>
 
+<h2>🌟 Infomation about this project</h2>
+<li>MVVM Pattern</li>
+<li>Priority first party library</li>
+<li>Thrid party Library : Kingfisher(Image Fetch), Lottie(Animation)</li>
+<li>Swift Combine</li>
+
 <h2>🔧 Installation & Usage</h2>
 <ol>
 <li>Clone this repository:</li>
