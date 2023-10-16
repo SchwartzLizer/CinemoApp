@@ -48,6 +48,10 @@ https://github.com/SchwartzLizer/CinemoApp/assets/54163797/426ce02c-c0a9-4fa9-94
 <h2>🤝 Contribute</h2>
 Feel free to fork this repository, create a branch, add your changes, and submit a pull request. We appreciate your contributions!
 
+<h2>🙏🏻 Special Thanks </h2>
+<li>Icon Image from Stable Diffusion AI Generate</li>
+<li>Major Cineplex for API Service</li>
+
 <h2>📄 License</h2>
 This project is licensed under the MIT License. See LICENSE.md for more details.
 
